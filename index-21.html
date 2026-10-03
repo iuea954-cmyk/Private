@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f5f7fb">
+<title>定期テスト対策　漢字</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#f5f7fb;color:#222;font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;touch-action:manipulation;min-height:100vh;min-height:100dvh}
+main{max-width:760px;margin:auto;padding:28px max(16px,env(safe-area-inset-right)) calc(50px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));padding-top:calc(28px + env(safe-area-inset-top))}
+button,label,input,textarea{font-family:inherit}
+button{-webkit-appearance:none;appearance:none;touch-action:manipulation}
+h1{text-align:center;margin:0 0 8px;font-size:24px;color:#1e293b}
+.sub{text-align:center;color:#667085;font-size:14px;margin-bottom:20px}
+.page.hidden,.hidden{display:none!important}
+.home-card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:20px}
+.home-card h2{margin-top:0;font-size:18px;color:#315bea;border-bottom:2px solid #eef2ff;padding-bottom:10px}
+.notice-list{padding-left:20px;margin:12px 0 0;color:#475569;line-height:1.7;font-size:15px}
+.notice-list li{margin-bottom:8px}
+.input-label{font-weight:700;color:#334155;font-size:15px;margin-bottom:6px;display:block}
+.num-guide{font-size:13px;color:#e65100;font-weight:700;margin-top:6px}
+.number-input-group{display:flex;align-items:center;gap:8px;margin-top:8px}
+.digit-input{width:48px;height:56px;font-size:24px;font-weight:800;text-align:center;border:2px solid #cbd5e1;border-radius:10px;background:#f8fafc;outline:none;-webkit-appearance:none;appearance:none;padding:0;color:#222;border-radius:10px}
+.digit-input:focus{border-color:#315bea;background:#fff;box-shadow:0 0 0 3px rgba(49,91,234,.15)}
+.name-display{font-size:18px;font-weight:800;color:#1e293b;padding-left:8px;flex:1;min-height:30px;display:flex;align-items:center}
+.identity-confirm-box{margin-top:16px;padding-top:14px;border-top:1px dashed #e2e8f0}
+.confirm-question{font-size:15px;font-weight:700;color:#334155;margin-bottom:10px}
+.radio-group{display:flex;gap:16px;flex-wrap:wrap}
+.radio-label{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:700;cursor:pointer;color:#475569;padding:8px 0}
+.radio-label input{width:22px;height:22px;accent-color:#315bea}
+.contact-btn{width:100%;margin-top:12px;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;border-radius:12px;padding:14px;font-size:15px;font-weight:700;cursor:pointer}
+.contact-btn:active{background:#e2e8f0}
+.mode-switch{display:flex;gap:10px;margin-bottom:16px}
+.mode-btn{flex:1;padding:14px;border:2px solid #ccd3dd;background:#fff;border-radius:12px;font-size:15px;font-weight:700;color:#555;cursor:pointer}
+.mode-btn.active{border-color:#315bea;background:#eef2ff;color:#315bea}
+.mode-btn:disabled{opacity:.5;cursor:not-allowed}
+.test-list{display:grid;gap:10px}
+.test-item{background:#fff;border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:8px;box-shadow:0 2px 8px #0000000a;cursor:pointer;border:2px solid transparent;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.test-item.selected{border-color:#315bea;background:#f0f4ff}
+.test-item.disabled{background:#eef1f6;color:#8898aa;cursor:not-allowed;box-shadow:none}
+.test-title{font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px}
+.test-status{font-size:13px;padding:4px 10px;border-radius:20px;font-weight:700;white-space:nowrap}
+.status-ended{background:#e2e8f0;color:#64748b}
+.status-active{background:#dcfce7;color:#15803d}
+.status-pending{background:#f1f5f9;color:#94a3b8}
+.checkbox-icon{width:20px;height:20px;border:2px solid #a0aec0;border-radius:4px;display:inline-block;position:relative;flex:none}
+.test-item.selected .checkbox-icon{background:#315bea;border-color:#315bea}
+.test-item.selected .checkbox-icon::after{content:'✓';color:#fff;font-size:14px;position:absolute;top:-2px;left:3px;font-weight:700}
+.action-btn{width:100%;margin-top:20px;background:#315bea;color:#fff;border:0;border-radius:14px;padding:16px;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(49,91,234,.25)}
+.action-btn:active{opacity:.9}
+.action-btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.back-btn{display:inline-flex;align-items:center;background:none;border:none;color:#667085;font-size:15px;font-weight:700;cursor:pointer;padding:10px 0;margin-bottom:12px}
+.choices{display:grid;gap:12px;margin-top:12px}
+.choice,.choice-btn{border:2px solid transparent;border-radius:14px;padding:16px;font-size:18px;font-weight:700;cursor:pointer;width:100%;background:#fff;box-shadow:0 2px 10px #0001;color:#222;text-align:center}
+.choice.selected-choice,.choice-btn.selected-choice{background:#eef2ff;border-color:#315bea;color:#315bea}
+.choice.disabled-choice,.choice-btn.disabled-choice{background:#eef1f6;color:#94a3b8;box-shadow:none;cursor:not-allowed;opacity:.6;pointer-events:none}
+.reset-choice-btn{width:100%;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px}
+.pick{position:relative;overflow:hidden;text-align:center}
+.pick input{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:100px;z-index:2}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;justify-content:center;align-items:center;z-index:9998;padding:16px}
+.modal.active{display:flex}
+.modal-card{background:#fff;border-radius:18px;padding:22px;width:100%;max-width:460px;max-height:90vh;overflow:auto}
+.modal-card h3{margin:0 0 12px;color:#1e293b}
+.who{background:#f1f5f9;border-radius:10px;padding:12px;font-weight:700;color:#334155;line-height:1.7;margin-bottom:10px}
+.modal-card .buttons{margin-top:14px}
+.box{background:#fff;border-radius:16px;padding:18px;margin-top:18px;box-shadow:0 2px 10px #0000000d}
+.preview{display:block;width:100%;max-height:560px;object-fit:contain;margin-top:12px;border-radius:10px;background:#eee;image-orientation:from-image}
+.confirm{text-align:center;font-size:21px;font-weight:800}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.yes{background:#198754;color:#fff;border:0;border-radius:14px;padding:16px;font-size:18px;font-weight:700;cursor:pointer}
+.no{background:#e9edf2;color:#333;border:0;border-radius:14px;padding:16px;font-size:18px;font-weight:700;cursor:pointer}
+.show-result-btn{width:100%;margin-top:20px;background:#e65100;color:#fff;font-size:18px;font-weight:700;border-radius:14px;padding:16px;border:0;cursor:pointer;box-shadow:0 4px 12px rgba(230,81,0,.25)}
+.show-result-btn:disabled{background:#e2e8f0;color:#94a3b8;cursor:not-allowed;box-shadow:none;opacity:.6}
+textarea{width:100%;min-height:130px;padding:12px;border:1px solid #ccd3dd;border-radius:12px;font-size:17px;margin-top:8px;-webkit-appearance:none;appearance:none;color:#222;background:#fff;resize:vertical}
+textarea:disabled{background:#f1f5f9;color:#94a3b8;cursor:not-allowed;resize:none}
+.selected-badge{display:inline-block;background:#eef2ff;color:#315bea;padding:6px 14px;border-radius:8px;font-weight:700;margin-bottom:16px;font-size:16px}
+.notice-box{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:18px;border-radius:14px;margin-top:14px;font-size:16px;font-weight:600;line-height:1.6;text-align:center}
+.notice-box h3{margin:0 0 8px;font-size:20px;color:#15803d}
+.sub-note{font-size:14px;color:#888;text-align:center;margin-top:10px;font-weight:500}
+.locked-info{background:#f1f5f9;color:#64748b;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:14px;font-weight:600}
+.error-box{background:#fef2f2;border:1px solid #fecaca;border-radius:16px;padding:20px;margin-top:20px;text-align:center}
+.error-title{color:#dc2626;font-size:20px;font-weight:800;margin-bottom:8px}
+.error-msg{color:#991b1b;font-size:15px;font-weight:600;line-height:1.6}
+.error-box.ok{background:#f0fdf4;border-color:#bbf7d0}
+.error-box.ok .error-title{color:#15803d}
+.error-box.ok .error-msg{color:#166534}
+.ai-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;justify-content:center;align-items:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity .3s}
+.ai-modal.active{opacity:1;pointer-events:auto}
+.ai-modal-content{background:#fff;width:90%;max-width:420px;border-radius:20px;padding:24px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.ai-spinner{width:50px;height:50px;border:5px solid #eef2ff;border-top-color:#315bea;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ai-spinner{animation-duration:3s}}
+.ai-modal-title{font-size:18px;font-weight:800;color:#1e293b;margin-bottom:8px}
+.ai-modal-desc{font-size:14px;color:#64748b;line-height:1.6}
+.bottom-nav-buttons{margin-top:28px}
+.home-btn:disabled{opacity:.4;cursor:not-allowed}
+.home-btn{width:100%;background:#475569;color:#fff;border:0;border-radius:12px;padding:16px;font-size:17px;font-weight:700;cursor:pointer}
+@media (min-width:700px){h1{font-size:28px}.home-card{padding:28px}}
+.warn{background:#fff7ed;border:1px solid #fdba74;color:#9a3412;border-radius:12px;padding:14px;font-size:14px;font-weight:600;line-height:1.7;margin-top:14px}
+.warn a{color:#c2410c;font-weight:800}
+details.diag{margin-top:14px;background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 10px #0000000d;font-size:14px;color:#475569;line-height:1.7}
+details.diag summary{font-weight:700;cursor:pointer;padding:6px 0}
+details.diag input[type=file]{display:block;width:100%;margin:8px 0;font-size:16px}
+.ver{text-align:center;color:#94a3b8;font-size:12px;margin-top:24px}
+.text-input{display:block;width:100%;font-size:17px;padding:12px;border:2px solid #cbd5e1;border-radius:10px;margin-top:6px;-webkit-appearance:none;appearance:none;background:#fff;color:#222}
+.text-input:focus{outline:none;border-color:#315bea}
+.admin-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #eef2ff;font-weight:700;color:#334155}
+.admin-row small{color:#94a3b8;font-weight:600}
+.del-btn{background:#fee2e2;color:#b91c1c;border:0;border-radius:8px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer}
+
+.bub{max-width:80%;padding:10px 12px;border-radius:14px;margin:6px 0;white-space:pre-wrap;word-break:break-all;font-size:15px}.bub.r{background:#dbeafe;margin-left:auto}.bub.l{background:#fff;box-shadow:0 1px 4px #0002}.bub small{display:block;color:#64748b;font-size:11px;margin-top:4px}
+.grey{background:#e5e7eb;color:#4b5563;border-radius:14px;padding:50px 16px;text-align:center;font-weight:700;margin-top:12px}
+.badge{background:#dc2626;color:#fff;border-radius:99px;min-width:24px;padding:2px 8px;text-align:center;font-size:13px;font-weight:800}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px;border-bottom:1px solid #eef2ff;font-weight:700;background:#fff;word-break:break-all}
+.strip{display:flex;gap:8px;overflow-x:auto;margin-top:10px}.strip>div{flex:0 0 42%;min-width:120px;background:#f1f5f9;border-radius:10px;padding:8px;font-weight:700;font-size:14px;word-break:break-all}.strip img,.zoomable{cursor:zoom-in}.strip img{width:100%;height:120px;object-fit:contain;background:#eee;border-radius:8px;display:block;margin-top:4px}
+#page2.multi .choices,#page2.multi details.diag,#page2.multi #fileArea,#page2.multi #confirmArea,#page2.multi #textArea,#page2.multi #resetChoiceBtn,#page2.multi #embedWarn{display:none!important}
+#ban{position:fixed;inset:0;background:rgba(220,38,38,.8);z-index:20000;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:20px}#ban .t{font-size:52px;font-weight:800;margin-top:12px}
+.lb{position:fixed;inset:0;background:#000e;z-index:10000;display:flex;flex-direction:column}#lbBox{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}#lbImg{width:100%;display:block}
+#lbClose{position:absolute;top:calc(10px + env(safe-area-inset-top));right:12px;z-index:2;background:#fff;border:0;border-radius:10px;padding:10px 16px;font-weight:700;font-size:15px}.lbz{display:flex;gap:10px;justify-content:center;padding:10px}.lbz button{background:#fff;border:0;border-radius:10px;padding:10px 24px;font-size:20px;font-weight:800}
+.pvbar{position:sticky;top:0;z-index:9000;display:flex;gap:10px;align-items:center;justify-content:space-between;background:#7c3aed;color:#fff;border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:13px;font-weight:700;line-height:1.4}
+.pvbar button{background:#fff;color:#7c3aed;border:0;border-radius:8px;padding:8px 12px;font-weight:800;cursor:pointer;white-space:nowrap}
+body.previewing .page{pointer-events:none}
+.usertag{display:inline-block;font-size:14px;font-weight:800;color:#315bea;background:#eef2ff;border-radius:10px;padding:8px 12px;margin-bottom:10px}
+.choice-btn.soon{background:#eef1f6;color:#94a3b8;box-shadow:none;opacity:.75}.choice-btn.soon:disabled{cursor:not-allowed}.soon-tag{display:block;font-size:12px;font-weight:700;margin-top:4px;color:#b45309}
+#janDone{position:fixed;top:calc(12px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);background:#15803d;color:#fff;padding:14px 20px;border-radius:12px;font-weight:800;z-index:40000;max-width:92%;text-align:center;box-shadow:0 4px 16px #0004;font-size:16px}
+#scVideo{width:100%;max-height:48vh;border-radius:12px;background:#000;object-fit:cover}
+.pair-code{font-size:40px;font-weight:800;letter-spacing:.12em;text-align:center;color:#315bea;margin:8px 0}
+.toast{position:fixed;top:calc(12px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;z-index:30000;box-shadow:0 4px 16px #0004;max-width:90%;text-align:center}
+</style>
+</head>
+<body>
+<main>
+<div id="userTag" class="usertag hidden"></div>
+<h1>定期テスト対策　漢字</h1>
+<div id="toast" class="toast hidden"></div>
+<div id="adminBar" class="pvbar hidden" style="background:#0f766e"><span>🛠 運営モード中</span><button type="button" id="adminBarExit" style="color:#0f766e">生徒画面に戻る</button></div>
+<div id="pvBar" class="pvbar hidden"><span id="pvLabel"></span><button type="button" id="pvExit">プレビューを終了</button></div>
+
+<div id="pageK" class="page hidden">
+<button type="button" id="backHomeK" class="back-btn">← ホームへ戻る</button>
+<p class="sub">漢字テストデータの提出・分析システム</p>
+<div class="home-card">
+  <h2>📌 注意事項・利用方法</h2>
+  <ul class="notice-list">
+    <li>間違えた漢字の写真または文字を入力して提出してください。</li>
+    <li>AIが写真の向きを自動矯正し、デジタル化・分析を行います。</li>
+    <li>一度確定して提出すると、回数の変更や再提出はできません。</li>
+    <li>10枚の提出（10人分）が集まるとなんの漢字が最も間違えたか分析結果が自動的に公開されます。</li>
+  </ul>
+</div>
+<button type="button" id="startBtn" class="action-btn">提出する</button>
+</div>
+
+<div id="page0" class="page">
+<p class="sub">ホーム</p>
+<div id="homeAcct" style="margin-bottom:12px"><div class="buttons" style="margin:0"><button type="button" class="choice-btn" id="homeSign">👤 サインイン</button><button type="button" class="choice-btn" id="homeLog">🔑 ログイン</button></div></div>
+<div class="choices" id="homeChoices"></div>
+<div class="home-card" style="margin-top:20px"><h2>📌 注意書き</h2>
+<ul class="notice-list"><li>予定の確認は本人確認なしで見られます。</li><li>漢字の提出には本人確認が必要です。</li><li>一度確定して提出すると、回数の変更や再提出はできません。</li></ul></div>
+<div class="buttons" style="margin-top:14px"><button type="button" class="contact-btn" id="homeSet" style="margin:0">⚙ 設定</button><button type="button" class="contact-btn" id="homeHelp" style="margin:0">❓ ヘルプ</button></div>
+<button type="button" id="adminEntry" class="contact-btn" style="margin-top:18px">🔧 運営ログイン</button>
+<button type="button" id="janHelperEntry" class="contact-btn" style="margin-top:10px">🔖 JAN登録用デバイスにする（運営に頼まれたとき）</button>
+</div>
+
+<div id="pageS" class="page hidden">
+<button type="button" class="back-btn" onclick="show(0)">← ホームへ戻る</button>
+<div class="choices"><button type="button" class="choice-btn" id="sTomorrow">明日の予定</button><button type="button" class="choice-btn" id="sSubmit">提出物の確認</button></div>
+</div>
+<div id="pageT" class="page hidden">
+<button type="button" class="back-btn" onclick="show('S')">← 戻る</button>
+<h2 style="margin:0">明日の予定</h2><div id="tBox"></div>
+<button type="button" class="action-btn" id="tRefresh">🔄 更新する</button>
+</div>
+<div id="pageP" class="page hidden">
+<button type="button" class="back-btn" onclick="show('S')">← 戻る</button>
+<h2 style="margin:0 0 10px">提出物の確認</h2><div id="pList"></div>
+</div>
+<div id="pageX" class="page hidden">
+<button type="button" class="back-btn" id="xBack">← 戻る</button>
+<h2 id="xTitle" style="margin:0 0 10px"></h2>
+<div id="xBody" class="home-card" style="white-space:pre-wrap;line-height:1.8"></div>
+<div class="choices" id="xLinks"></div>
+</div>
+<div id="pageJ" class="page hidden">
+<button type="button" class="back-btn" onclick="show(0)">← ホームへ戻る</button>
+<h2 style="margin:0 0 10px">🔖 JAN登録用デバイス</h2>
+<div class="home-card">
+  <div class="sub-note" style="text-align:left">運営の端末に表示された6桁のコードを入力してください。このデバイスのカメラでJANコードを読み取り、運営の端末に送ります。</div>
+  <input type="tel" id="jCode" class="text-input" inputmode="numeric" maxlength="6" placeholder="6桁のコード" autocomplete="off">
+  <button type="button" class="action-btn" id="jGo">接続する</button>
+  <div id="jMsg" class="num-guide"></div>
+  <div id="jRun" class="hidden" style="margin-top:14px">
+    <div class="notice-box" style="margin-top:0">✅ 運営の端末につながりました</div>
+    <button type="button" class="action-btn" id="jScan">📷 カメラを開いてJANコードを登録</button>
+  </div>
+</div>
+</div>
+<div id="pageC" class="page hidden">
+<button type="button" class="back-btn" id="chatBack">← 戻る</button>
+<div class="who" id="chatWho"></div><div class="sub-note" style="margin:0 0 8px;text-align:left">※ アプリの使い方やエラーのお問い合わせは、まずAIが答えます。解決しないときは、運営にも送れます。</div><div class="sub-note" style="margin:0 0 8px;text-align:left">※ やり取りは24時間後に自動で消えます。このやり取りは、運営とあなただけが見られます。</div><div id="chatLog" style="min-height:200px"></div>
+<textarea id="chatText" placeholder="運営へのメッセージ" style="min-height:90px"></textarea>
+<button type="button" class="action-btn" id="chatSend" style="margin-top:10px">送信</button>
+</div>
+
+<div id="pageA" class="page hidden">
+<button type="button" class="back-btn" onclick="show(0)">← ホームへ戻る</button>
+<div class="mode-switch"><button type="button" id="aSign" class="mode-btn active">サインイン</button><button type="button" id="aLog" class="mode-btn">ログイン</button></div>
+<div class="home-card">
+  <h2>🪪 本人確認</h2>
+  <span class="input-label">出席番号を入力してください：</span>
+  <div class="num-guide">※ 一桁番号は0を付けるようにしましょう。（他クラスは「00」）</div>
+  <div class="number-input-group">
+    <input type="tel" id="digit1" class="digit-input" maxlength="1" pattern="[0-9]*" inputmode="numeric" autocomplete="off" aria-label="出席番号 十の位">
+    <input type="tel" id="digit2" class="digit-input" maxlength="1" pattern="[0-9]*" inputmode="numeric" autocomplete="off" aria-label="出席番号 一の位">
+    <div id="studentNameDisplay" class="name-display"></div>
+  </div>
+  <div id="signBox" style="margin-top:12px">
+    <button type="button" id="pwToggle" class="contact-btn">🔐 なりすまし防止パスワードをつける（任意）</button>
+    <div id="pwBox" class="hidden" style="margin-top:10px">
+      <div class="sub-note" style="text-align:left">※ つけるかどうかは自由です。<br>※ このパスワードは、運営にも表示されます。他のサービスと同じものは使わないでください。<br>※ 他の人と同じパスワードは使えません。</div>
+      <input type="password" id="newPw" class="text-input" placeholder="パスワード（4文字以上）" autocomplete="new-password" autocapitalize="off">
+      <button type="button" id="eyeNew" class="contact-btn" style="margin-top:8px">👁 表示</button>
+    </div>
+  </div>
+  <div id="logBox" class="hidden" style="margin-top:12px">
+    <div id="logPwBox" class="hidden">
+      <span class="input-label">なりすまし防止パスワード</span>
+      <input type="password" id="logPw" class="text-input" autocomplete="current-password" autocapitalize="off">
+      <button type="button" id="eyeLog" class="contact-btn" style="margin-top:8px">👁 表示</button>
+    </div>
+    <div class="sub-note" style="text-align:left">※ パスワードをつけていない人は、番号だけでログインできます。</div>
+  </div>
+  <div id="acctMsg" class="num-guide"></div>
+  <button type="button" id="acctGo" class="action-btn" disabled>サインインする</button>
+  <button type="button" id="contactBtn" class="contact-btn">✉️ 本人確認でお困りの方（お問い合わせ）</button>
+</div>
+<div id="confirmCard" class="home-card hidden">
+  <h2>🪪 本人確認</h2>
+  <div id="confirmWho" class="who"></div>
+  <div class="confirm">本人ですか？</div>
+  <div class="buttons"><button type="button" class="yes" id="cfYes">はい、本人です</button><button type="button" class="no" id="cfNo">いいえ</button></div>
+</div>
+</div>
+
+<div id="pageG" class="page hidden">
+<button type="button" class="back-btn" onclick="show(0)">← ホームへ戻る</button>
+<h2 style="margin:0 0 10px">⚙ 設定</h2><div id="setBody"></div>
+</div>
+
+<div id="pageH" class="page hidden">
+<button type="button" class="back-btn" onclick="show(0)">← ホームへ戻る</button>
+<h2 style="margin:0 0 10px">❓ ヘルプ</h2><div id="helpList"></div>
+<div class="home-card" id="aiBox" style="margin-top:14px">
+  <h2>🤖 AIに質問する</h2>
+  <div class="sub-note" style="text-align:left">使い方・エラー・ログインなどの困りごとに、AIが答えます。原因を調べるため、画面の状態とエラーの記録も一緒に送ります（名前・番号・パスワードは送りません）。</div>
+  <div id="aiChips" style="display:flex;flex-wrap:wrap;margin-top:6px"></div>
+  <textarea id="aiQ" placeholder="困っていることを書いてください" style="min-height:90px"></textarea>
+  <button type="button" class="action-btn" id="aiAsk" style="margin-top:10px">AIに聞く</button>
+  <div id="aiA" class="who hidden" style="white-space:pre-wrap;margin-top:12px"></div>
+  <button type="button" class="contact-btn hidden" id="aiEsc">🙋 解決しない → 運営に連絡する</button>
+</div>
+<button type="button" class="action-btn" id="helpContact">✉️ 運営に連絡する</button>
+</div>
+
+<div id="page1" class="page hidden">
+<button type="button" id="backToHome" class="back-btn">← ホームへ戻る</button>
+<p class="sub" style="text-align:left">対象の漢字テストを選択してください。</p>
+<div id="lockedNotice" class="locked-info hidden">🔒 回数は選択済みでロックされています（確定済みのため変更不可）</div>
+<div class="mode-switch">
+  <button type="button" id="singleModeBtn" class="mode-btn active">1つ選択</button>
+  <button type="button" id="multiModeBtn" class="mode-btn">複数まとめて選択</button>
+</div>
+<div class="test-list" id="testListContainer">
+  <div class="test-item disabled"><span class="test-title"><span class="checkbox-icon"></span>第1回</span><span class="test-status status-ended">受付終了しました</span></div>
+  <div class="test-item disabled"><span class="test-title"><span class="checkbox-icon"></span>第2回</span><span class="test-status status-ended">受付終了しました</span></div>
+  <div class="test-item" data-round="第3回"><span class="test-title"><span class="checkbox-icon"></span>第3回</span><span class="test-status status-active">受付中</span></div>
+  <div class="test-item" data-round="第4回"><span class="test-title"><span class="checkbox-icon"></span>第4回</span><span class="test-status status-active">受付中</span></div>
+  <div class="test-item" data-round="第5回"><span class="test-title"><span class="checkbox-icon"></span>第5回</span><span class="test-status status-active">受付中</span></div>
+  <div class="test-item disabled"><span class="test-title"><span class="checkbox-icon"></span>第6回</span><span class="test-status status-pending">未定</span></div>
+  <div class="test-item disabled"><span class="test-title"><span class="checkbox-icon"></span>第7回</span><span class="test-status status-pending">未定</span></div>
+</div>
+<button type="button" id="nextToPage2" class="action-btn" disabled>確定して次へ進む</button>
+</div>
+
+<div id="page2" class="page hidden">
+<button type="button" id="backToPage1" class="back-btn">← 回数確認へ戻る</button>
+<div class="selected-badge" id="displayRounds">選択中の回数：-</div>
+<div id="multiArea" class="hidden"></div>
+<p class="sub" style="text-align:left;margin-bottom:12px">提出方法を選択してください。</p>
+<div class="choices">
+  <div class="choice-btn pick" id="fileChoiceLabel">🖼 写真・ファイルから選んで提出<input type="file" id="fileInput" accept="image/*,application/pdf" aria-label="写真・ファイルを選ぶ"></div>
+  <div class="choice-btn pick" id="cameraChoice">📷 カメラで撮影して提出<input type="file" id="cameraInput" accept="image/*" capture="environment" aria-label="カメラで撮影"></div>
+  <button type="button" class="choice-btn" id="textChoice">✏️ 文字入力で提出</button>
+</div>
+<button type="button" id="resetChoiceBtn" class="reset-choice-btn hidden">🔄 提出方法を選び直す</button>
+<div id="embedWarn" class="warn hidden">⚠️ この画面（アプリ内プレビュー・埋め込み表示など）では、写真・カメラを開く機能がブロックされています。ボタンの不具合ではありません。<br><span id="warnHow"></span><a id="openBrowser" href="" target="_blank" rel="noopener" class="hidden">Safari / Chrome で開く</a></div>
+<details class="diag">
+  <summary>ボタンを押しても選択画面が出ない場合</summary>
+  下の標準ボタンから選んでください。
+  <input type="file" id="plainInput" accept="image/*,application/pdf">
+  <input type="file" id="plainCamera" accept="image/*" capture="environment">
+  それでも開かない場合は、いま開いている画面（アプリ内表示・埋め込みなど）が写真選択を許可していません。Safari または Chrome のアドレス欄から直接開いてください。
+</details>
+<div id="fileArea" class="box hidden">
+  <b>提出する写真</b>
+  <div id="fileName" style="margin-top:8px;word-break:break-all"></div>
+  <img id="preview" class="preview hidden" alt="選択した写真">
+</div>
+<div id="confirmArea" class="box hidden">
+  <div class="confirm" id="confirmText">この写真を提出しますか？</div>
+  <div class="buttons">
+    <button class="yes" id="confirmYes" type="button">はい</button>
+    <div class="no pick" id="confirmNo">選び直す<input type="file" id="retakeInput" accept="image/*,application/pdf" aria-label="選び直す"></div>
+  </div>
+</div>
+<div id="textArea" class="box hidden">
+  <b>間違えた漢字を入力してください。</b>
+  <textarea id="kanjiText" placeholder="例：議、環、識"></textarea>
+</div>
+<button class="action-btn" id="aiButton" style="margin-top:18px" disabled type="button">提出する</button>
+</div>
+
+<div id="page3" class="page hidden">
+<div class="notice-box">
+  <h3>🎉 ご協力ありがとうございます！</h3>
+  <span id="submissionStatusMsg">提出が正常に完了いたしました。</span><br>
+  <span id="submissionSubMsg">みんなが間違えやすかった漢字を集計して確認することができます。</span>
+</div>
+<div id="aiResultBox" class="box hidden" style="text-align:center"></div>
+<button id="mostWrongBtn" class="show-result-btn" disabled type="button">最も間違えた漢字を表示する（集計中）</button>
+<div class="sub-note" id="subNoteText">※ 10枚の提出が集まり次第、全体データが公開されます。</div>
+<div id="errorArea" class="error-box hidden">
+  <div class="error-title" id="errorTitle">⚠️ Error：データの集計中です</div>
+  <div class="error-msg" id="errorMsgText">現在、提出枚数が10枚に達していないため、AI分析結果を表示できません。<br>10枚の提出が集まり次第、こちらに最も間違えた漢字が表示されます。</div>
+</div>
+<div id="receipt" class="box" style="text-align:center"></div>
+<button type="button" id="toContactBtn" class="action-btn">次へ（連絡ページへ）</button>
+</div>
+
+<div id="page4" class="page hidden">
+<p class="sub" style="text-align:left">連絡する内容を選んでください。</p>
+<div class="choices" id="contactChoices"></div>
+<div id="inquiryBox" class="box hidden"><b>お問い合わせ内容を入力してください。</b><textarea id="inquiryText" placeholder="お問い合わせ内容"></textarea></div>
+<button type="button" id="sendContactBtn" class="action-btn" disabled>送る</button>
+<div class="sub-note" id="sendNote"></div>
+<div class="sub-note">※ 「提出できた」は24時間後に自動で消えます。</div>
+<textarea id="copyArea" class="hidden" readonly style="min-height:110px;margin-top:10px"></textarea>
+<div class="bottom-nav-buttons"><button type="button" id="goHomeBtn" class="home-btn" disabled>ホームに戻る</button></div>
+</div>
+
+<div id="page5" class="page hidden">
+<button type="button" id="adminBack" class="back-btn">← ホームへ戻る</button>
+<div id="adminLogin" class="home-card">
+  <h2>🔧 運営専用</h2>
+  <span class="input-label">運営専用パスワード</span>
+  <input type="password" id="adminPass" class="text-input" autocomplete="off" autocapitalize="off">
+  <button type="button" id="eyeLogin" class="contact-btn" style="margin-top:8px">👁 表示</button>
+  <button type="button" id="adminLoginBtn" class="action-btn" style="margin-top:14px">ログイン</button>
+  <div id="adminMsg" class="num-guide"></div>
+  <button type="button" id="forgotBtn" class="contact-btn">パスワードを忘れた</button>
+  <div id="forgotBox" class="hidden" style="margin-top:12px">
+    <span class="input-label">確認用メールアドレス</span>
+    <input type="email" id="forgotMail" class="text-input" inputmode="email" autocomplete="off" autocapitalize="off">
+    <button type="button" id="forgotCheckBtn" class="action-btn" style="margin-top:12px">メールアドレスで確認</button>
+  </div>
+</div>
+<div id="adminPanel" class="home-card hidden"><button type="button" id="exitAdmin" class="action-btn" style="margin:0 0 14px;background:#7c3aed;box-shadow:none">👤 生徒画面に戻る（運営モードを解除）</button><h2>🛠 運営メニュー</h2><div class="mode-switch" style="flex-wrap:wrap" id="adminTabs"></div><div id="adminBody"></div></div>
+</div>
+
+<div id="janDone" class="hidden"></div>
+<div id="scanModal" class="modal" role="dialog">
+  <div class="modal-card">
+    <h3 id="scTitle">JANコードを読み取る</h3>
+    <div id="scStep1">
+      <video id="scVideo" playsinline muted></video>
+      <div class="sub-note" id="scMsg"></div>
+      <div class="pick contact-btn" style="margin-top:8px">📷 写真を撮って読み取る<input type="file" id="scPhoto" accept="image/*" capture="environment" aria-label="写真を撮って読み取る"></div>
+      <details class="diag"><summary>読み取れないとき（数字を入力）</summary>
+        <input type="tel" id="scManual" class="text-input" inputmode="numeric" maxlength="13" placeholder="コードの数字（6桁）" autocomplete="off">
+        <button type="button" class="contact-btn" id="scManualGo">この数字で進む</button>
+      </details>
+    </div>
+    <div id="scStep2" class="hidden">
+      <div class="who" id="scCode"></div>
+      <span class="input-label">出席番号・名前（JANコードの上に書いてあります）</span>
+      <select id="scSel" class="text-input"></select>
+      <div class="confirm" id="scAsk" style="margin-top:14px;font-size:18px"></div>
+      <div class="buttons"><button type="button" class="no" id="scNo">やり直す</button><button type="button" class="yes" id="scYes">はい</button></div>
+    </div>
+    <div class="buttons" style="grid-template-columns:1fr"><button type="button" class="no" id="scClose">閉じる</button></div>
+  </div>
+</div>
+<div id="pairAsk" class="modal" role="dialog">
+  <div class="modal-card">
+    <h3>🔖 JANコードの登録</h3>
+    <div class="confirm" id="pairAskText"></div>
+    <div class="who" id="pairAskCode" style="margin-top:12px"></div>
+    <div class="buttons"><button type="button" class="no" id="pairNo">いいえ</button><button type="button" class="yes" id="pairYes">はい</button></div>
+  </div>
+</div>
+<div id="contactModal" class="modal" role="dialog">
+  <div class="modal-card">
+    <h3>✉️ お問い合わせ</h3>
+    <div class="who" id="contactWho"></div>
+    <textarea id="contactBody" placeholder="お問い合わせ内容を入力してください" style="min-height:110px"></textarea>
+    <div class="buttons">
+      <button type="button" class="no" id="contactClose">閉じる</button>
+      <button type="button" class="yes" id="contactSend">送信する</button>
+    </div>
+    <div class="sub-note">「送信する」を押すと運営とのトーク画面が開きます。</div>
+  </div>
+</div>
+<div id="lb" class="lb hidden"><button type="button" id="lbClose">閉じる</button><div id="lbBox"><img id="lbImg" alt=""></div><div class="lbz"><button type="button" id="lbM">－</button><button type="button" id="lbP">＋</button></div></div>
+<div id="ban" class="hidden"><div style="font-size:20px;font-weight:800">不適切なお問い合わせのため、利用できません</div><div class="t" id="banT">23:59:59</div></div>
+<div id="aiModal" class="ai-modal" role="alertdialog" aria-live="polite">
+  <div class="ai-modal-content">
+    <div class="ai-spinner"></div>
+    <div class="ai-modal-title" id="aiModalTitle">AI解析・デジタル化中...</div>
+    <div class="ai-modal-desc" id="aiModalDesc">写真の向きを補正し、AIが過去のデータと照合して漢字を特定しています。</div>
+  </div>
+</div>
+<div class="ver">ver.20</div>
+</main>
+
+<script>
+const CONTACT_B64 = 'MTIxNHlhbWFzaG9AZ21haWwuY29t'; // お問い合わせ先（画面には表示しません）
+const AI_ENDPOINT = ''; // ← worker.js を公開して発行されたURLをここに入れる（空欄の間はAI解析なし）
+const REQUIRED_COUNT = 10;
+
+const studentList = {
+  "00":"他クラス","01":"足立まりん","02":"池谷ゆまり","03":"伊地知まさと","04":"伊藤あおし","05":"伊藤あやさ",
+  "06":"伊藤しおん","07":"伊藤そうま","08":"伊藤ひかる","09":"伊藤りょうた","10":"伊藤りんり","11":"榎並けいと",
+  "12":"太田あいり","13":"大橋のどか","14":"岡島こうへい","15":"加藤きよはる","16":"北村あやか","17":"久野たくと",
+  "18":"古賀あまね","19":"坂下ゆの","20":"鈴木あいのすけ","21":"高木さら","22":"高野さつか","23":"谷岡らら",
+  "24":"永家てつと","25":"西山みはる","26":"服部あいこ","27":"服部かいと","28":"服部らら","29":"早川りょうせい",
+  "30":"平野そら","31":"平野みく","32":"廣瀬たいよう","33":"藤城えいた","34":"前田かりん","35":"松井あおい",
+  "36":"宮﨑あまね","37":"武藤かなで","38":"柳田りゅうたろう","39":"山下しょうた","40":"和田ひまり","41":"アブドラ・モハメド"
+};
+
+function store(k, v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }catch(e){ return null; } }
+let submissionCount = parseInt(store('kanji_submission_count')) || 0;
+
+const $ = id => document.getElementById(id);
+/* エラーの記録（AIが原因を調べるために使います。名前・番号・パスワードは含めません） */
+const ERRS = [];
+function logErr(msg, where){
+  msg = String(msg || '').slice(0, 300); where = String(where || '').slice(0, 120);
+  const l = ERRS[ERRS.length - 1];
+  if(l && l.msg === msg && l.where === where){ l.n = (l.n || 1) + 1; return; }
+  ERRS.push({t: new Date().toTimeString().slice(0, 8), msg: msg, where: where, n: 1}); if(ERRS.length > 12) ERRS.shift();
+}
+let lastErrToast = 0;
+function errToast(){
+  if(Date.now() - lastErrToast < 30000) return; lastErrToast = Date.now();
+  const t = $('toast'); if(!t) return;
+  t.textContent = '⚠️ エラーが起きました。タップするとAIに相談できます'; t.classList.remove('hidden');
+  t.onclick = () => { t.classList.add('hidden'); t.onclick = null; if(window.openHelpAI) openHelpAI('エラーが出ました。原因と、どうすればよいか教えてください。'); };
+  setTimeout(() => { t.classList.add('hidden'); t.onclick = null; }, 8000);
+}
+window.addEventListener('error', e => { logErr(e.message, String(e.filename || '').split('/').pop() + ':' + e.lineno + ':' + e.colno); errToast(); });
+window.addEventListener('unhandledrejection', e => { logErr((e.reason && (e.reason.message || e.reason)) || 'rejection', 'promise'); errToast(); });
+
+const digit1 = $('digit1'), digit2 = $('digit2');
+const fileInput = $('fileInput'), cameraInput = $('cameraInput'), retakeInput = $('retakeInput'), preview = $('preview');
+const kanjiText = $('kanjiText'), aiButton = $('aiButton');
+const nextToPage2 = $('nextToPage2');
+const singleModeBtn = $('singleModeBtn'), multiModeBtn = $('multiModeBtn');
+
+let notified = false;
+let isMultiSelect = false, selectedRounds = [], isConfirmedRounds = false;
+let selectedFile = null, confirmed = false, mode = '', previewUrl = null;
+
+function show(n){
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('hidden', p.id !== 'page' + n));
+  window.scrollTo(0, 0);
+  if(n === 0 && typeof renderHome === 'function') renderHome();
+}
+function on(el, fn){ el.addEventListener('click', fn); }
+
+/* ---------- 本人確認 ---------- */
+function getNum(){ return (digit1.value + digit2.value).trim(); }
+function checkNumber(){ if(typeof acctNumber === 'function') acctNumber(); }
+const digitsOnly = el => { el.value = el.value.replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0)).replace(/[^0-9]/g, '').slice(0,1); };
+digit1.addEventListener('input', () => { digitsOnly(digit1); if(digit1.value){ digit2.focus(); digit2.select(); } checkNumber(); });
+digit2.addEventListener('input', () => { digitsOnly(digit2); checkNumber(); });
+digit2.addEventListener('keydown', e => { if(e.key === 'Backspace' && !digit2.value){ digit1.focus(); } });
+
+function who(){ let u = null; try{ u = JSON.parse(localStorage.getItem('kj_user') || 'null'); }catch(e){} if(u && u.n) return {n: u.n, name: u.name}; const n = getNum(); return { n: n.length === 2 ? n : '未入力', name: studentList[n] || '未確認' }; }
+on($('contactBtn'), () => {
+  const w = who();
+  $('contactWho').innerHTML = '出席番号：' + w.n + '<br>名前：' + w.name;
+  $('contactModal').classList.add('active');
+});
+on($('contactClose'), () => $('contactModal').classList.remove('active'));
+on($('contactSend'), () => {
+  const msg = $('contactBody').value.trim();
+  if(!msg){ alert('お問い合わせ内容を入力してください。'); return; }
+  if(!sendInq(msg)) return;
+  $('contactBody').value = ''; $('contactModal').classList.remove('active'); openChat('A');
+});
+
+on($('startBtn'), () => { if(!$('startBtn').disabled) { updateRoundUI(); show(1); } });
+
+/* ---------- 回数選択 ---------- */
+function updateRoundUI(){
+  document.querySelectorAll('.test-item[data-round]').forEach(el => {
+    el.classList.toggle('selected', selectedRounds.includes(el.dataset.round));
+    el.style.cursor = isConfirmedRounds ? 'not-allowed' : '';
+  });
+  singleModeBtn.classList.toggle('active', !isMultiSelect);
+  multiModeBtn.classList.toggle('active', isMultiSelect);
+  singleModeBtn.disabled = multiModeBtn.disabled = isConfirmedRounds;
+  $('lockedNotice').classList.toggle('hidden', !isConfirmedRounds);
+  nextToPage2.disabled = selectedRounds.length === 0;
+  nextToPage2.textContent = isConfirmedRounds ? '次へ進む' : '確定して次へ進む';
+}
+function setMode(multi){
+  if(isConfirmedRounds) return;
+  isMultiSelect = multi;
+  if(!multi && selectedRounds.length > 1) selectedRounds = [selectedRounds[0]];
+  updateRoundUI();
+}
+on(singleModeBtn, () => setMode(false));
+on(multiModeBtn, () => setMode(true));
+document.querySelectorAll('.test-item[data-round]').forEach(el => on(el, () => {
+  if(isConfirmedRounds) return;
+  const r = el.dataset.round, i = selectedRounds.indexOf(r);
+  if(isMultiSelect){ i >= 0 ? selectedRounds.splice(i,1) : selectedRounds.push(r); }
+  else { selectedRounds = i >= 0 ? [] : [r]; }
+  selectedRounds.sort();
+  updateRoundUI();
+}));
+on($('backToHome'), () => show(0));
+on(nextToPage2, () => {
+  if(!selectedRounds.length) return;
+  isConfirmedRounds = true;
+  updateRoundUI();
+  $('displayRounds').textContent = '選択中の回数：' + selectedRounds.join('、');
+  show(2);
+});
+on($('backToPage1'), () => show(1));
+
+/* ---------- 提出方法 ---------- */
+function updateSubmitState(){
+  if(selectedRounds.length > 1){ aiButton.disabled = !multiOk; return; }
+  let ok = false;
+  if(mode === 'file') ok = !!selectedFile && confirmed;
+  if(mode === 'text') ok = kanjiText.value.trim().length > 0;
+  aiButton.disabled = !ok;
+}
+function lockChoice(m, src){
+  mode = m;
+  ['fileChoiceLabel','cameraChoice','textChoice'].forEach(id => $(id).classList.remove('selected-choice','disabled-choice'));
+  if(m === 'text'){
+    $('textChoice').classList.add('selected-choice');
+    $('fileChoiceLabel').classList.add('disabled-choice');
+    $('cameraChoice').classList.add('disabled-choice');
+  } else {
+    $(src === 'camera' ? 'cameraChoice' : 'fileChoiceLabel').classList.add('selected-choice');
+    $('textChoice').classList.add('disabled-choice');
+  }
+  $('resetChoiceBtn').classList.remove('hidden');
+}
+function resetChoice(){
+  mode = ''; selectedFile = null; confirmed = false;
+  if(previewUrl){ URL.revokeObjectURL(previewUrl); previewUrl = null; }
+  fileInput.value = ''; cameraInput.value = ''; retakeInput.value = ''; $('plainInput').value = ''; $('plainCamera').value = ''; kanjiText.value = '';
+  preview.removeAttribute('src');
+  ['fileChoiceLabel','cameraChoice','textChoice'].forEach(id => $(id).classList.remove('selected-choice','disabled-choice'));
+  ['resetChoiceBtn','fileArea','confirmArea','textArea','preview'].forEach(id => $(id).classList.add('hidden'));
+  updateSubmitState();
+}
+on($('textChoice'), () => {
+  if(mode === 'file') return;
+  lockChoice('text');
+  $('textArea').classList.remove('hidden');
+  updateSubmitState();
+  setTimeout(() => kanjiText.focus(), 50);
+});
+kanjiText.addEventListener('input', updateSubmitState);
+on($('resetChoiceBtn'), resetChoice);
+
+let lastSrc = 'file';
+
+const IMG_RE = /\.(jpe?g|png|gif|webp|bmp|heic|heif)$/i;
+function handleFile(input, src){
+  const f = input.files && input.files[0];
+  if(!f) return;
+  try{ handleFile2(f, input, src); }catch(err){ alert('ファイルを読み込めませんでした。別の写真でお試しください。'); }
+}
+function handleFile2(f, input, src){
+  const isImg = (f.type || '').startsWith('image/') || IMG_RE.test(f.name);
+  const isPdf = f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
+  if(!isImg && !isPdf){ alert('画像またはPDFファイルを選んでください。'); input.value = ''; return; }
+  if(f.size > 30 * 1024 * 1024){ alert('ファイルが大きすぎます（30MBまで）。'); input.value = ''; return; }
+  selectedFile = f; confirmed = false;
+  lockChoice('file', src);
+  $('fileName').textContent = f.name;
+  $('fileArea').classList.remove('hidden');
+  if(previewUrl){ URL.revokeObjectURL(previewUrl); previewUrl = null; }
+  if(isImg){
+    previewUrl = URL.createObjectURL(f);
+    preview.onerror = () => { preview.classList.add('hidden'); $('fileName').textContent = f.name + '（この形式はプレビューできませんが提出できます）'; };
+    preview.onload = () => preview.classList.remove('hidden');
+    preview.src = previewUrl;
+  } else {
+    preview.classList.add('hidden');
+    $('fileName').textContent = f.name + '（PDF）';
+  }
+  $('confirmText').textContent = isImg ? 'この写真を提出しますか？' : 'このファイルを提出しますか？';
+  $('confirmArea').classList.remove('hidden');
+  updateSubmitState();
+}
+fileInput.addEventListener('change', () => { lastSrc = 'file'; handleFile(fileInput, 'file'); });
+cameraInput.addEventListener('change', () => { lastSrc = 'camera'; handleFile(cameraInput, 'camera'); });
+retakeInput.addEventListener('change', () => handleFile(retakeInput, lastSrc));
+$('plainInput').addEventListener('change', () => { lastSrc = 'file'; handleFile($('plainInput'), 'file'); });
+$('plainCamera').addEventListener('change', () => { lastSrc = 'camera'; handleFile($('plainCamera'), 'camera'); });
+(function(){
+  const ua = navigator.userAgent || '';
+  let framed = false; try{ framed = window.top !== window.self; }catch(e){ framed = true; }
+  const inApp = /Line\/|FBAN|FBAV|Instagram|MicroMessenger|Twitter|; wv\)|GSA\//.test(ua) || (/iPhone|iPad/.test(ua) && !/Safari\//.test(ua) && !/CriOS|FxiOS|EdgiOS/.test(ua));
+  const fileUrl = location.protocol === 'file:' && /iPhone|iPad/.test(ua);
+  if(framed || inApp || fileUrl){
+    $('embedWarn').classList.remove('hidden');
+    if(/^https?:$/.test(location.protocol) && !framed){
+      $('openBrowser').href = location.href; $('openBrowser').classList.remove('hidden');
+      $('warnHow').textContent = '下のリンクから、Safari / Chrome の通常のタブで開いてください。';
+    } else {
+      $('warnHow').textContent = 'このファイルを端末に保存し、Chrome（Android）か、Webに公開したURLをSafari / Chromeで開いて使ってください。ここでは「文字入力で提出」のみ使えます。';
+    }
+  }
+})();
+
+async function prepareImage(f){
+  if(!((f.type || '').startsWith('image/') || IMG_RE.test(f.name))) return null;
+  let bmp;
+  try{ bmp = await createImageBitmap(f, {imageOrientation:'from-image'}); }
+  catch(e){ bmp = await new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = previewUrl; }); }
+  const w = bmp.width || bmp.naturalWidth, h = bmp.height || bmp.naturalHeight;
+  const sc = Math.min(1, 1600 / Math.max(w, h));
+  const c = document.createElement('canvas');
+  c.width = Math.round(w * sc); c.height = Math.round(h * sc);
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+  return c.toDataURL('image/jpeg', 0.85);
+}
+on($('confirmYes'), () => {
+  confirmed = true;
+  $('confirmArea').classList.add('hidden');
+  updateSubmitState();
+});
+
+/* ---------- 提出・AI解析（ここは仮の動作です） ---------- */
+function pad2(n){ return String(n).padStart(2, '0'); }
+let lastMail = null;
+const esc = t => String(t == null ? '' : t).replace(/[<>&"]/g, '');
+function prepareMail(w){
+  const d = new Date();
+  const when = d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日 ' + pad2(d.getHours()) + '時' + pad2(d.getMinutes()) + '分' + pad2(d.getSeconds()) + '秒';
+  lastMail = {w: w, when: when, rounds: selectedRounds.join('、')};
+}
+async function callAI(sub){
+  const r = await fetch(AI_ENDPOINT, {method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({rounds: sub.rounds, text: sub.text, image: sub.image})});
+  if(!r.ok) throw new Error('AI ' + r.status);
+  return await r.json();
+}
+function renderAI(ai){
+  const box = $('aiResultBox');
+  let h = '';
+  if(ai && Array.isArray(ai.kanji) && ai.kanji.length){
+    h = '<b>AIが特定した、間違えた漢字</b><div style="font-size:34px;font-weight:800;letter-spacing:.2em;margin:10px 0;word-break:break-all">' + ai.kanji.map(esc).join('　') + '</div>';
+  } else if(ai){
+    h = '<b>AIの解析結果</b><div style="margin-top:8px">漢字を特定できませんでした。' + esc(ai.note) + '</div>';
+  } else {
+    h = '<div>AI解析は未設定のため、今回は行っていません。</div>';
+  }
+  box.innerHTML = h;
+  box.classList.remove('hidden');
+}
+const FIXED_CHOICES = ['お問い合わせ', '提出できた'];
+const CONTACT_TO = [atob(CONTACT_B64), atob('b242ODk1ODZAZ21haWwuY29t')];
+const RESET_OK = [atob('b242ODlAZ21haWwuY29t'), atob('b242ODk1ODZAZ21haWwuY29t'), atob(CONTACT_B64)];
+let contactChoice = '';
+function nowStr(){
+  const d = new Date();
+  return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日 ' + pad2(d.getHours()) + '時' + pad2(d.getMinutes()) + '分' + pad2(d.getSeconds()) + '秒';
+}
+function loadExtra(){
+  DB.load();
+  return (DB.d.extra || []).filter(x => typeof x === 'string' && x && FIXED_CHOICES.indexOf(x) < 0).slice(0, 20);
+}
+function updateSend(){
+  const inq = contactChoice === 'お問い合わせ';
+  $('inquiryBox').classList.toggle('hidden', !inq);
+  $('sendContactBtn').disabled = !contactChoice || (inq && !$('inquiryText').value.trim());
+}
+function renderContact(){
+  contactChoice = ''; $('inquiryText').value = '';
+  const box = $('contactChoices'); box.innerHTML = '';
+  FIXED_CHOICES.concat(loadExtra()).forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'choice-btn'; b.textContent = c;
+    b.onclick = () => { if(c === 'お問い合わせ'){ openChat(4); return; } contactChoice = c; Array.from(box.children).forEach(x => x.classList.toggle('selected-choice', x === b)); updateSend(); };
+    box.appendChild(b);
+  });
+  $('copyArea').classList.add('hidden');
+  updateSend();
+}
+$('inquiryText').addEventListener('input', updateSend);
+function resetNotify(){
+  notified = false;
+  $('goHomeBtn').disabled = true;
+  const m = lastMail;
+  $('receipt').innerHTML = '<b>提出内容の記録</b><div style="margin-top:8px;line-height:1.8">出席番号：' + esc(m.w.n) + '<br>名前：' + esc(m.w.name) + '<br>回数：' + esc(m.rounds) + '<br>提出日時：' + esc(m.when) + '</div>';
+  renderContact();
+  $('sendNote').textContent = '※ 「提出できた」を送ると、ホームに戻れます。';
+}
+on($('toContactBtn'), () => show(4));
+on($('sendContactBtn'), () => {
+  if($('sendContactBtn').disabled || banned()) return;
+  const w = who();
+  if(contactChoice === '提出できた'){
+    selectedRounds.forEach(r => post('sub', r + '　' + w.n + ' ' + w.name + '　' + fmt(Date.now()) + '　提出が完了しました', r));
+    notified = true; $('goHomeBtn').disabled = false;
+    $('sendNote').textContent = '提出が完了しました。ホームに戻れます。';
+  } else if(sendInq('【' + contactChoice + '】')){
+    $('sendNote').textContent = '送信しました。';
+  }
+});
+
+/* ---------- 運営ページ ---------- */
+on($('adminEntry'), () => {
+  $('adminLogin').classList.remove('hidden'); $('adminPanel').classList.add('hidden');
+  $('adminPass').value = ''; $('forgotMail').value = ''; $('adminMsg').textContent = ''; $('forgotBox').classList.add('hidden');
+  show(5);
+});
+on($('adminBack'), () => show(0));
+on($('adminLoginBtn'), () => {
+  if('h:' + H($('adminPass').value) === DB.pass()) openPanel();
+  else $('adminMsg').textContent = 'パスワードが違います。';
+});
+on($('forgotBtn'), () => $('forgotBox').classList.toggle('hidden'));
+on($('forgotCheckBtn'), () => {
+  const e = $('forgotMail').value.trim().toLowerCase();
+  if(RESET_OK.indexOf(e) >= 0) openPanel();
+  else $('adminMsg').textContent = 'このメールアドレスは確認できませんでした。';
+});
+
+on(aiButton, async () => {
+  if(aiButton.disabled) return;
+  aiButton.disabled = true;
+  $('aiModal').classList.add('active');
+  let image = null;
+  if(mode === 'file' && selectedRounds.length < 2){ try{ image = await prepareImage(selectedFile); }catch(e){ image = null; } }
+  const w = who();
+  const sub = {rounds: selectedRounds, number: w.n, name: w.name, mode: mode, text: kanjiText.value.trim(), image: image};
+  let ai = null;
+  if(AI_ENDPOINT){
+    try{ ai = await callAI(sub); }
+    catch(e){
+      $('aiModal').classList.remove('active');
+      aiButton.disabled = false;
+      alert('AI解析に接続できませんでした。時間をおいてもう一度お試しください。');
+      return;
+    }
+  }
+  prepareMail(w);
+  $('aiModal').classList.remove('active');
+  submissionCount += 1;
+  store('kanji_submission_count', String(submissionCount));
+  renderResultState();
+  renderAI(ai);
+  resetNotify();
+  show(3);
+});
+
+function renderResultState(){
+  const ready = submissionCount >= REQUIRED_COUNT;
+  $('mostWrongBtn').disabled = !ready;
+  $('mostWrongBtn').textContent = ready ? '最も間違えた漢字を表示する' : '最も間違えた漢字を表示する（集計中）';
+  $('subNoteText').classList.toggle('hidden', ready);
+  $('errorArea').classList.add('hidden');
+  $('errorArea').classList.remove('ok');
+}
+on($('mostWrongBtn'), () => {
+  if($('mostWrongBtn').disabled) return;
+  const box = $('errorArea');
+  box.classList.remove('hidden'); box.classList.add('ok');
+  $('errorTitle').textContent = '📊 集計結果';
+  $('errorMsgText').textContent = '集計結果の表示機能は、解析サーバーとの接続後に利用できます。';
+});
+
+function goHome(){
+  if(!notified) return;
+  $('aiResultBox').classList.add('hidden');
+  selectedRounds = []; isConfirmedRounds = false; isMultiSelect = false;
+  resetChoice();
+  updateRoundUI();
+  show(0);
+}
+on($('goHomeBtn'), goHome);
+
+updateRoundUI();
+renderResultState();
+</script>
+
+<script>
+/* ===== 追加機能 ===== */
+/* 保存先: DB_URL を設定すると、Firebase Realtime Database で全員の端末と共有します（空欄の間は、この端末の中だけ）。 */
+const DB_URL = ''; // 例 https://xxxx-default-rtdb.firebaseio.com
+const FB_API_KEY = ''; // Firebase の「ウェブ API キー」（運営のオンラインログイン用。公開されても問題のないキーです）
+const TTL = 24 * 60 * 60 * 1000; // 運営とのやり取り・提出できたが自動で消えるまでの時間（24時間）
+/* この端末だけの秘密の番号。生徒ごとのやり取りは、この番号の場所にだけ保存され、他の生徒の端末からは見えません。 */
+const DEV = (() => { let v = null; try{ v = localStorage.getItem('kj_dev'); }catch(e){}
+  if(!v){ const a = new Uint8Array(12); if(typeof crypto !== 'undefined' && crypto.getRandomValues) crypto.getRandomValues(a); else for(let i = 0; i < 12; i++) a[i] = Math.floor(Math.random() * 256);
+    v = 'd' + Array.from(a).map(x => x.toString(16).padStart(2, '0')).join(''); try{ localStorage.setItem('kj_dev', v); }catch(e){} }
+  return v; })();
+function H(s){ let a = 0xdeadbeef, b = 0x41c6ce57; s = 'kj:' + s; for(let i = 0; i < s.length; i++){ const c = s.charCodeAt(i); a = Math.imul(a ^ c, 2654435761); b = Math.imul(b ^ c, 1597334677); }
+  a = Math.imul(a ^ (a >>> 16), 2246822507) ^ Math.imul(b ^ (b >>> 13), 3266489909); b = Math.imul(b ^ (b >>> 16), 2246822507) ^ Math.imul(a ^ (a >>> 13), 3266489909);
+  return (4294967296 * (2097151 & b) + (a >>> 0)).toString(36); }
+function stable(o){
+  if(Array.isArray(o)){ const a = o.map(stable); return a.some(x => x !== '') ? '[' + a.join(',') + ']' : ''; }
+  if(o && typeof o === 'object'){ const k = Object.keys(o).sort().map(x => { const v = stable(o[x]); return v === '' ? '' : JSON.stringify(x) + ':' + v; }).filter(Boolean); return k.length ? '{' + k.join(',') + '}' : ''; }
+  return o === null || o === undefined ? '' : JSON.stringify(o);
+}
+const DB = {
+  d: {}, sent: {}, flight: {}, cfgSent: '', cfgFlight: '', synced: false, ok: null, imgAt: -1, imgDirty: false, imgBusy: false, admin: false, tok: null, tokAt: 0,
+  norm(d){
+    d.pass = d.pass || ('h:' + H('1214')); if(String(d.pass).indexOf('h:') !== 0) d.pass = 'h:' + H(d.pass);
+    ['msgs', 'labels', 'extra', 'rounds', 'help', 'items'].forEach(k => { if(d[k] && !Array.isArray(d[k])) d[k] = Object.keys(d[k]).map(x => d[k][x]); });
+    d.msgs = d.msgs || [];
+    d.msgs.forEach(m => { if(!m.dev) m.dev = DEV; });
+    d.sched = d.sched || {img:null, at:0, label:'運営が写真を投稿していません'};
+    d.labels = d.labels || ['運営が写真を投稿していません','準備中'];
+    d.menu = d.menu || {sched:false, kanji:true};
+    d.extra = d.extra || [];
+    const defI = [{id:'sched', name:'予定を確認', icon:'📅', type:'sched', start:''}, {id:'kanji', name:'定期テスト対策　漢字', icon:'📝', type:'kanji', start:''}];
+    d.items = (Array.isArray(d.items) ? d.items : []).filter(x => x && x.id);
+    defI.forEach((x, i) => { if(!d.items.some(y => y.id === x.id)) d.items.splice(Math.min(i, d.items.length), 0, Object.assign({}, x)); });
+    const toArr = v => Array.isArray(v) ? v : (v && typeof v === 'object' ? Object.keys(v).map(k => v[k]) : []);
+    d.items.forEach(it => {
+      it.start = it.start || ''; it.icon = it.icon || ''; it.name = it.name || '（名前なし）';
+      if(it.type === 'custom'){
+        it.pages = toArr(it.pages).filter(x => x && x.id);
+        if(!it.pages.length) it.pages = [{id:'p1', title:it.name, body:'', links:[]}];
+        it.pages.forEach(pg => { pg.title = pg.title || ''; pg.body = pg.body || ''; pg.links = toArr(pg.links).filter(x => x && x.to); });
+      }
+    });
+    d.help = d.help || [
+      {q:'サインインとログインの違いは？', a:'サインイン：はじめて使うときの登録です。出席番号を入れて、本人かどうかを確認します。\nログイン：サインイン済みの人が、もう一度入るときに使います。'},
+      {q:'なりすまし防止パスワードとは？', a:'他の人が自分の出席番号で入れないようにするパスワードです。つけるかどうかは自由です。つけた場合は、ログインのときに入力が必要です。\n※ パスワードは運営にも表示されます。他のサービスと同じものは使わないでください。\n※ 他の人と同じパスワードは使えません。'},
+      {q:'漢字の提出のしかたは？', a:'ホームの「定期テスト対策　漢字」を選び、回数を選んで、間違えた漢字の写真または文字を提出します。最後に連絡ページで「提出できた」を送ってください。'},
+      {q:'運営に連絡したいときは？', a:'提出後の連絡ページ、またはこのヘルプの下のボタンから、運営に連絡できます。'},
+      {q:'やり取りはいつ消えますか？', a:'運営とのやり取りと「提出できた」は、24時間後に自動で消えます。'},
+      {q:'ログアウトしたい', a:'ホームの「設定」から、ログアウトできます。'}
+    ];
+    d.rounds = d.rounds || [['第1回','ended'],['第2回','ended'],['第3回','active'],['第4回','active'],['第5回','active'],['第6回','pending'],['第7回','pending']].map(x => ({n:x[0], dl:'', st:x[1]}));
+  },
+  load(){
+    try{ this.d = JSON.parse(localStorage.getItem('kj_db') || '{}'); }catch(e){ this.d = {}; }
+    this.norm(this.d);
+    const n = this.d.msgs.length;
+    this.d.msgs = this.d.msgs.filter(m => Date.now() - m.t <= TTL);
+    if(this.d.msgs.length !== n) this.save();
+  },
+  cache(){ try{ localStorage.setItem('kj_db', JSON.stringify(this.d)); }catch(e){ alert('保存できませんでした（写真が大きすぎる可能性があります）'); } },
+  save(){
+    this.d.msgs.forEach(m => { if(!m.id) m.id = 'm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); if(!m.dev) m.dev = DEV; });
+    this.cache(); this.push();
+  },
+  pass(){ this.load(); return this.d.pass; },
+  K(m){ return m.dev + '/' + m.id; },
+  url(p){ return DB_URL.replace(/\/+$/, '') + p + '.json' + (this.admin && this.tok ? '?auth=' + encodeURIComponent(this.tok) : ''); },
+  async signIn(){
+    if(!DB_URL || !FB_API_KEY) return false;
+    let em = null, pw = null; try{ em = localStorage.getItem('kj_fbem'); pw = localStorage.getItem('kj_fbpw'); }catch(e){}
+    if(!em || !pw) return false;
+    try{
+      const r = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + encodeURIComponent(FB_API_KEY), {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({email: em, password: pw, returnSecureToken: true})});
+      const j = await r.json(); if(!r.ok || !j.idToken) throw new Error('auth');
+      this.tok = j.idToken; this.tokAt = Date.now(); return true;
+    }catch(e){ this.tok = null; return false; }
+  },
+  async ensureTok(){ if(this.admin && (!this.tok || Date.now() - this.tokAt > 40 * 60 * 1000)) await this.signIn(); },
+  async req(method, p, body){
+    const r = await fetch(this.url(p), {method: method, body: body === undefined ? undefined : JSON.stringify(body)});
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  },
+  cfgOf(d){ return {pass: d.pass, labels: d.labels, menu: d.menu, items: d.items, rounds: d.rounds, extra: d.extra, help: d.help, sched: {at: d.sched.at || 0, label: d.sched.label, has: !!d.sched.img}}; },
+  push(){
+    if(!DB_URL) return;
+    const d = this.d;
+    if(this.imgDirty && !this.imgBusy){
+      this.imgDirty = false; this.imgBusy = true;
+      const done = () => { this.imgBusy = false; this.push(); }, fail = () => { this.imgBusy = false; this.imgDirty = true; };
+      (d.sched.img ? this.req('PUT', '/schedimg', d.sched.img) : this.req('DELETE', '/schedimg')).then(done, fail);
+    }
+    if(this.synced && !this.imgBusy){
+      const c = stable(this.cfgOf(d));
+      if(c !== this.cfgSent && c !== this.cfgFlight){
+        this.cfgFlight = c;
+        this.req('PUT', '/cfg', JSON.parse(JSON.stringify(this.cfgOf(d)))).then(() => { this.cfgSent = c; }).catch(() => {}).then(() => { this.cfgFlight = ''; });
+      }
+    }
+    const keys = {};
+    d.msgs.forEach(m => {
+      const K = this.K(m); keys[K] = 1; const s = stable(m);
+      if(this.sent[K] !== s && this.flight[K] !== s){
+        this.flight[K] = s;
+        this.req('PUT', '/msgs/' + K, m).then(() => { this.sent[K] = s; }).catch(() => {}).then(() => { delete this.flight[K]; });
+      }
+    });
+    Object.keys(this.sent).forEach(K => {
+      if(!keys[K] && !this.flight['del' + K]){
+        this.flight['del' + K] = 1;
+        this.req('DELETE', '/msgs/' + K).then(() => { delete this.sent[K]; }).catch(() => {}).then(() => { delete this.flight['del' + K]; });
+      }
+    });
+  },
+  async sync(){
+    if(!DB_URL) return null;
+    try{
+      await this.ensureTok();
+      if(this.admin && !this.tok) throw new Error('need login');
+      this.push();
+      const r = await Promise.all([this.req('GET', '/cfg'), this.req('GET', this.admin ? '/msgs' : '/msgs/' + DEV)]);
+      const cfg = r[0], sm = r[1] || {};
+      const flat = {};
+      if(this.admin){
+        Object.keys(sm).forEach(dv => { const t = sm[dv]; if(t && typeof t === 'object') Object.keys(t).forEach(id => { const m = t[id]; if(m && typeof m === 'object'){ m.id = id; m.dev = dv; flat[dv + '/' + id] = m; } }); });
+      } else {
+        Object.keys(sm).forEach(id => { const m = sm[id]; if(m && typeof m === 'object'){ m.id = id; m.dev = DEV; flat[DEV + '/' + id] = m; } });
+      }
+      let img;
+      if(cfg && cfg.sched && cfg.sched.has && cfg.sched.at !== this.imgAt){ try{ img = await this.req('GET', '/schedimg'); }catch(e){ img = undefined; } }
+      this.load();
+      const d = this.d;
+      if(cfg){
+        const dirty = this.cfgSent !== '' && stable(this.cfgOf(d)) !== this.cfgSent;
+        if(!dirty){
+          const s = cfg.sched || {}, rest = Object.assign({}, cfg); delete rest.sched;
+          Object.assign(d, rest);
+          ['extra', 'help', 'rounds', 'items'].forEach(k => { d[k] = cfg[k] ? (Array.isArray(cfg[k]) ? cfg[k] : Object.keys(cfg[k]).map(x => cfg[k][x])) : []; });
+          d.sched = d.sched || {}; d.sched.at = s.at || 0; if(s.label) d.sched.label = s.label;
+          if(s.has){ if(img){ d.sched.img = img; this.imgAt = s.at; } } else { d.sched.img = null; this.imgAt = s.at || 0; }
+          this.norm(d); this.cfgSent = stable(this.cfgOf(d));
+        }
+      }
+      const out = {};
+      Object.keys(flat).forEach(K => {
+        const m = flat[K]; if(this.flight['del' + K]) return;
+        const lm = d.msgs.find(x => this.K(x) === K);
+        out[K] = (lm && (this.flight[K] || (this.sent[K] !== undefined && stable(lm) !== this.sent[K]))) ? lm : m;
+        if(out[K] === m) this.sent[K] = stable(m);
+      });
+      d.msgs.forEach(m => {
+        const K = this.K(m); if(out[K]) return;
+        if(this.flight[K] || this.sent[K] === undefined) out[K] = m; else delete this.sent[K];
+      });
+      const before = Object.keys(out).length;
+      d.msgs = Object.keys(out).map(k => out[k]).filter(m => Date.now() - m.t <= TTL).sort((a, b) => a.t - b.t);
+      this.synced = true; this.ok = true;
+      if(d.msgs.length !== before) this.save(); else { this.cache(); this.push(); }
+      return true;
+    }catch(e){ this.ok = false; logErr('同期に失敗: ' + (e && e.message), 'DB.sync'); return false; }
+  }
+};
+DB.load();
+function el(t, c, x){ const e = document.createElement(t); if(c) e.className = c; if(x !== undefined) e.textContent = x; return e; }
+function fmt(t){ const d = new Date(t); return d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日(' + '日月火水木金土'[d.getDay()] + ') ' + pad2(d.getHours()) + '時' + pad2(d.getMinutes()) + '分' + pad2(d.getSeconds()) + '秒'; }
+function shrink(f, max, cb){ const im = new Image(), u = URL.createObjectURL(f);
+  im.onload = () => { const k = Math.min(1, max / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = im.width * k; c.height = im.height * k; c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(u); cb(c.toDataURL('image/jpeg', .8)); };
+  im.onerror = () => alert('画像を読み込めませんでした。'); im.src = u; }
+function eye(inp, btn){ btn.onclick = () => { const h = inp.type === 'password'; inp.type = h ? 'text' : 'password'; btn.textContent = h ? '🙈 隠す' : '👁 表示'; }; }
+eye($('adminPass'), $('eyeLogin'));
+
+/* 画像拡大 */
+let lbW = 100;
+function openLB(src){ lbW = 100; $('lbImg').style.width = '100%'; $('lbImg').src = src; $('lb').classList.remove('hidden'); }
+on($('lbClose'), () => $('lb').classList.add('hidden'));
+on($('lbP'), () => { lbW = Math.min(800, lbW * 1.3); $('lbImg').style.width = lbW + '%'; });
+on($('lbM'), () => { lbW = Math.max(100, lbW / 1.3); $('lbImg').style.width = lbW + '%'; });
+preview.classList.add('zoomable'); preview.addEventListener('click', () => openLB(preview.src));
+
+/* 24時間使用不可 */
+function banned(){ return +store('kj_ban') > Date.now(); }
+function tick(){ const left = (+store('kj_ban') || 0) - Date.now();
+  if(left <= 0){ $('ban').classList.add('hidden'); return; }
+  const s = Math.floor(left / 1000); $('ban').classList.remove('hidden');
+  $('banT').textContent = Math.floor(s/3600) + ':' + pad2(Math.floor(s%3600/60)) + ':' + pad2(s%60); }
+setInterval(tick, 1000); tick();
+function isJunk(t){ const x = t.replace(/\s/g, ''); return x.length >= 3 && (/^(.)\1+$/.test(x) || !/[\p{L}\p{N}]/u.test(x)); } /* 簡易判定。AI_ENDPOINT連携は未実装 */
+
+/* メッセージ */
+function post(kind, text, round, extra){ DB.load(); const w = who(); const m = Object.assign({id: 'm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7), t: Date.now(), num: w.n, name: w.name, kind: kind, text: text, round: round || '', read: false, dev: DEV}, extra || {}); DB.d.msgs.push(m); DB.save(); return m.id; }
+function sendInq(text){
+  if(banned()) return false;
+  if(isJunk(text)){ store('kj_ban', String(Date.now() + 86400000)); tick(); return false; }
+  post('inq', text); return true;
+}
+let chatBackTo = 0;
+function openChat(b){ chatBackTo = b; renderChat(); show('C'); }
+function renderChat(){
+  DB.load(); const w = who(), box = $('chatLog'); box.innerHTML = '';
+  $('chatWho').textContent = '出席番号：' + w.n + '　' + w.name;
+  DB.d.msgs.filter(m => m.dev === DEV && m.kind !== 'sub').forEach(m => {
+    if(m.kind === 'rep') m.read = true;
+    const b = el('div', 'bub ' + (m.kind === 'rep' ? 'l' : 'r'), m.text); b.appendChild(el('small', '', (m.kind === 'rep' ? (m.ai ? '🤖 AI　' : '運営　') : (m.ai ? '（AIが回答）　' : '')) + fmt(m.t))); box.appendChild(b);
+    if(m.kind === 'rep' && m.ai){
+      const q = DB.d.msgs.find(x => x.id === m.for);
+      if(q && q.ai && !q.esc){ const e = el('button', 'contact-btn', '🙋 解決しない → 運営にも送る'); e.type = 'button'; e.style.marginTop = '4px';
+        e.onclick = () => { DB.load(); const z = DB.d.msgs.find(x => x.id === m.for); if(z){ z.esc = true; z.read = false; DB.save(); } renderChat(); toast('運営にも送りました'); }; box.appendChild(e); }
+    }
+  });
+  DB.save();
+}
+on($('chatBack'), () => show(chatBackTo));
+let chatBusy = false;
+on($('chatSend'), async () => {
+  const t = $('chatText').value.trim(); if(!t || chatBusy || banned()) return;
+  if(isJunk(t)){ store('kj_ban', String(Date.now() + 86400000)); tick(); return; }
+  chatBusy = true; $('chatSend').disabled = true;
+  try{
+    let ai = null;
+    if(AI_ENDPOINT && t.indexOf('【AIで解決しませんでした】') !== 0){ try{ ai = await aiCall({action: 'inquiry', text: t, context: diagCtx()}); }catch(e){ logErr('AI接続に失敗: ' + (e && e.message), 'inquiry'); ai = null; } }
+    if(ai && ai.kind === 'help' && ai.answer){ const id = post('inq', t, '', {ai: true, read: true, diag: diagCtx()}); post('rep', ai.answer, '', {ai: true, for: id, t: Date.now() + 1}); }
+    else post('inq', t, '', t.indexOf('【AIで解決しませんでした】') === 0 ? {diag: diagCtx()} : undefined);
+    $('chatText').value = ''; renderChat();
+  }finally{ chatBusy = false; $('chatSend').disabled = false; }
+});
+
+/* ホーム・予定 */
+let afterId = 'kanji';
+on($('backHomeK'), () => show(0));
+/* ホームの選択肢（運営が増やせる・開始日つき） */
+function itemSoon(it){ return !!it.start && Date.now() < new Date(it.start + 'T00:00:00').getTime(); }
+function startTxt(it){ const d = it.start.split('-'); return (+d[1]) + '/' + (+d[2]); }
+function openItem(it){
+  DB.load();
+  if(itemSoon(it)){ if(!adminIn) return; toast('🚧 開発中です（運営だけ開けます）'); }
+  afterId = it.type === 'sched' ? 'sched' : 'kanji';
+  const need = !!DB.d.menu[it.id];
+  if(need && !session()){ goLogin(it.name + 'を使うには、サインインまたはログインが必要です。'); return; }
+  if(it.type === 'sched') show('S');
+  else if(it.type === 'kanji'){ if(need) show('K'); else { updateRoundUI(); renderRounds(); show(1); } }
+  else openCustom(it, null);
+}
+function renderHome(){
+  DB.load(); const box = $('homeChoices'); if(!box) return; box.innerHTML = '';
+  DB.d.items.forEach(it => {
+    const soon = itemSoon(it), b = el('button', 'choice-btn' + (soon ? ' soon' : ''), (it.icon ? it.icon + ' ' : '') + it.name);
+    b.type = 'button';
+    if(soon){ b.appendChild(el('small', 'soon-tag', '🚧 開発中（' + startTxt(it) + ' 開始）')); if(!adminIn) b.disabled = true; }
+    b.onclick = () => openItem(it);
+    box.appendChild(b);
+  });
+}
+setInterval(() => { if(!document.hidden && !previewing && $('page0') && !$('page0').classList.contains('hidden')) renderHome(); }, 30000);
+/* 運営が作った項目のページ */
+let cStack = [], cItem = null;
+function openCustom(it, pid){
+  DB.load(); cItem = DB.d.items.find(x => x.id === it.id) || it;
+  if(pid == null){ cStack = []; pid = cItem.pages[0].id; }
+  const pg = cItem.pages.find(x => x.id === pid) || cItem.pages[0];
+  if(cStack[cStack.length - 1] !== pg.id) cStack.push(pg.id);
+  $('xTitle').textContent = pg.title || cItem.name;
+  $('xBody').textContent = pg.body || ''; $('xBody').classList.toggle('hidden', !pg.body);
+  const L = $('xLinks'); L.innerHTML = '';
+  pg.links.forEach(l => { const t = cItem.pages.find(x => x.id === l.to); if(!t) return;
+    const b = el('button', 'choice-btn', l.label || t.title || '次へ'); b.type = 'button'; b.onclick = () => openCustom(cItem, t.id); L.appendChild(b); });
+  show('X');
+}
+on($('xBack'), () => { cStack.pop(); if(cStack.length) openCustom(cItem, cStack[cStack.length - 1]); else show(0); });
+on($('startBtn'), () => { renderRounds(); if(afterId === 'sched') show('S'); });
+on($('sTomorrow'), () => { if(adminIn){ openPanel(); renderAdmin('sched'); show(5); } else { renderT(); show('T'); } });
+on($('sSubmit'), () => { renderP(); show('P'); });
+function schedValid(){ DB.load(); const s = DB.d.sched; if(!s.img) return false; const d = new Date(s.at); d.setDate(d.getDate() + 1); d.setHours(19, 30, 0, 0); return Date.now() < d.getTime(); }
+function renderT(){
+  const b = $('tBox'); b.innerHTML = '';
+  if(schedValid()){ const i = el('img', 'preview zoomable'); i.src = DB.d.sched.img; i.onclick = () => openLB(i.src); b.appendChild(i); }
+  else b.appendChild(el('div', 'grey', DB.d.sched.label));
+}
+on($('tRefresh'), renderT);
+function effSt(r){ if(r.st === 'active' && r.dl && Date.now() > new Date(r.dl + 'T23:59:59').getTime()) return 'ended'; return r.st; }
+function dlTxt(r){ if(!r.dl) return ''; const d = r.dl.split('-'); return '（期限 ' + (+d[1]) + '/' + (+d[2]) + '）'; }
+function renderP(){
+  DB.load(); const b = $('pList'); b.innerHTML = '';
+  DB.d.rounds.forEach(r => { const e = effSt(r), row = el('div', 'row'); row.appendChild(el('span', '', r.n + dlTxt(r))); row.appendChild(el('span', 'test-status status-' + (e === 'active' ? 'active' : e === 'ended' ? 'ended' : 'pending'), e === 'active' ? '受付中' : e === 'ended' ? '受付終了' : '未定')); b.appendChild(row); });
+}
+function renderRounds(){
+  DB.load(); const c = $('testListContainer'); c.innerHTML = '';
+  selectedRounds = selectedRounds.filter(n => DB.d.rounds.some(r => r.n === n && effSt(r) === 'active'));
+  DB.d.rounds.forEach(r => {
+    const e = effSt(r), it = el('div', 'test-item' + (e === 'active' ? '' : ' disabled'));
+    const t = el('span', 'test-title'); t.appendChild(el('span', 'checkbox-icon')); t.appendChild(document.createTextNode(r.n));
+    it.appendChild(t); it.appendChild(el('span', 'test-status status-' + (e === 'active' ? 'active' : e === 'ended' ? 'ended' : 'pending'), e === 'active' ? '受付中' + dlTxt(r) : e === 'ended' ? '受付終了しました' : '未定'));
+    if(e === 'active'){ it.dataset.round = r.n; it.onclick = () => {
+      if(isConfirmedRounds) return;
+      const i = selectedRounds.indexOf(r.n);
+      if(isMultiSelect){ i >= 0 ? selectedRounds.splice(i, 1) : selectedRounds.push(r.n); } else { selectedRounds = i >= 0 ? [] : [r.n]; }
+      updateRoundUI(); }; }
+    c.appendChild(it);
+  });
+  updateRoundUI();
+}
+
+/* 複数回の提出 */
+let multiOk = false, M = {};
+on(nextToPage2, () => buildMulti());
+function buildMulti(){
+  const multi = selectedRounds.length > 1; $('page2').classList.toggle('multi', multi);
+  const A = $('multiArea'); A.classList.toggle('hidden', !multi); A.innerHTML = ''; multiOk = false; M = {};
+  if(!multi){ updateSubmitState(); return; }
+  const conf = el('div', 'box hidden'); 
+  selectedRounds.forEach(r => {
+    M[r] = {t:'', file:null, url:null, text:''};
+    const bx = el('div', 'box'); bx.appendChild(el('b', '', r));
+    const row = el('div', 'buttons');
+    const pk = el('div', 'choice-btn pick', '🖼 写真'), fi = document.createElement('input'); fi.type = 'file'; fi.accept = 'image/*'; pk.appendChild(fi);
+    const tb = el('button', 'choice-btn', '✏️ 文字'); tb.type = 'button';
+    row.appendChild(pk); row.appendChild(tb); bx.appendChild(row);
+    const im = el('img', 'preview hidden zoomable'); im.onclick = () => openLB(im.src);
+    const ta = el('textarea', 'hidden'); ta.placeholder = '間違えた漢字を入力';
+    bx.appendChild(im); bx.appendChild(ta); A.appendChild(bx);
+    const sel = () => { pk.classList.toggle('selected-choice', M[r].t === 'photo'); tb.classList.toggle('selected-choice', M[r].t === 'text'); };
+    fi.onchange = () => { const f = fi.files[0]; if(!f) return; if(M[r].url) URL.revokeObjectURL(M[r].url);
+      M[r].t = 'photo'; M[r].file = f; M[r].url = URL.createObjectURL(f); im.src = M[r].url; im.classList.remove('hidden'); ta.classList.add('hidden'); sel(); refresh(); };
+    tb.onclick = () => { M[r].t = 'text'; M[r].file = null; im.classList.add('hidden'); ta.classList.remove('hidden'); sel(); refresh(); };
+    ta.oninput = () => { M[r].text = ta.value; refresh(); };
+  });
+  A.appendChild(conf);
+  function refresh(){
+    multiOk = false; updateSubmitState(); conf.innerHTML = '';
+    const ready = selectedRounds.every(r => M[r].t === 'photo' ? !!M[r].file : M[r].t === 'text' && M[r].text.trim());
+    conf.classList.toggle('hidden', !ready); if(!ready) return;
+    const ph = selectedRounds.filter(r => M[r].t === 'photo').length, all = selectedRounds.length;
+    const q = ph === all ? 'この写真を提出しますか？' : ph === 0 ? 'この文字を提出しますか？' : 'この写真と文字を提出しますか？';
+    conf.appendChild(el('div', 'confirm', q));
+    const st = el('div', 'strip');
+    selectedRounds.forEach(r => { const c = el('div', '', r);
+      if(M[r].t === 'photo'){ const i = el('img'); i.src = M[r].url; i.onclick = () => openLB(i.src); c.appendChild(i); } else c.appendChild(el('div', '', M[r].text));
+      st.appendChild(c); });
+    conf.appendChild(st);
+    const y = el('button', 'yes', 'はい'); y.type = 'button'; y.style.cssText = 'width:100%;margin-top:12px';
+    y.onclick = () => { multiOk = true; y.disabled = true; y.textContent = '確認済み ✓'; updateSubmitState(); };
+    conf.appendChild(y);
+  }
+}
+
+/* 運営ページ */
+let adminIn = false, aTab = 'inbox', inTab = 'inq', aThread = null;
+function openPanel(){ adminIn = true; DB.admin = true; renderAdminBar(); DB.signIn().then(() => doSync()); $('adminLogin').classList.add('hidden'); $('adminPanel').classList.remove('hidden'); renderAdmin(); }
+function renderAdmin(tab){
+  if(tab) aTab = tab; DB.load();
+  const T = $('adminTabs'); T.innerHTML = '';
+  [['inbox','連絡'],['items','🏠 ホーム項目'],['sched','予定写真'],['rounds','回数'],['choices','選択肢'],['jan','🔖 JAN登録'],['accts','👤 アカウント'],['help','❓ ヘルプ'],['preview','👀 プレビュー'],['set','設定']].forEach(k => { const b = el('button', 'mode-btn' + (k[0] === aTab ? ' active' : ''), k[1]); b.type = 'button'; b.style.minWidth = '30%'; b.onclick = () => { aThread = null; renderAdmin(k[0]); }; T.appendChild(b); });
+  const B = $('adminBody'); B.innerHTML = ''; B.appendChild(onlineBadge());
+  ({inbox:aInbox, items:aItems, sched:aSched, rounds:aRounds, choices:aChoices, preview:aPreview, jan:aJan, accts:aAccts, help:aHelp, set:aSet})[aTab](B);
+}
+function btn(t, f, c){ const b = el('button', c || 'action-btn', t); b.type = 'button'; b.onclick = f; return b; }
+function aInbox(B){
+  if(aThread){ const dev = aThread, num = ((DB.d.msgs.find(m => m.dev === dev) || {}).num) || ''; B.appendChild(btn('← 一覧へ', () => { aThread = null; renderAdmin(); }, 'back-btn'));
+    B.appendChild(el('div', 'who', '出席番号：' + num + '　' + (studentList[num] || '')));
+    DB.d.msgs.filter(m => m.dev === dev && m.kind !== 'sub').forEach(m => { if(m.kind === 'inq') m.read = true; const b = el('div', 'bub ' + (m.kind === 'rep' ? 'r' : 'l'), m.text); b.appendChild(el('small', '', (m.kind === 'rep' && m.ai ? '🤖 AI　' : (m.ai ? '（AIが回答済み）　' : '')) + fmt(m.t))); B.appendChild(b); });
+    DB.save();
+    const ta = el('textarea'); ta.placeholder = '返信を入力'; claudePanel(B, dev, num, ta); B.appendChild(ta);
+    B.appendChild(btn('返信する', () => { const t = ta.value.trim(); if(!t) return; DB.load(); DB.d.msgs.push({t:Date.now(), num:num, name:studentList[num] || '', kind:'rep', text:t, round:'', read:false, dev:dev}); DB.save(); renderAdmin(); }));
+    return; }
+  const tabs = el('div', 'mode-switch');
+  [['inq','お問い合わせ'],['sub','提出できた']].forEach(k => { const b = el('button', 'mode-btn' + (k[0] === inTab ? ' active' : ''), k[1]); b.type = 'button'; b.onclick = () => { inTab = k[0]; renderAdmin(); }; tabs.appendChild(b); });
+  B.appendChild(tabs);
+  B.appendChild(el('div', 'sub-note', '※ お問い合わせ・提出できたは、24時間後に自動で消えます。'));
+  if(inTab === 'inq'){
+    const g = {}; DB.d.msgs.filter(m => m.kind === 'inq').forEach(m => { const x = g[m.dev] = g[m.dev] || {dev:m.dev, num:m.num, name:m.name, un:0}; x.last = m; if(!m.read) x.un++; });
+    Object.values(g).sort((a, b) => a.last.t - b.last.t).forEach(x => {
+      const r = el('div', 'row'); r.style.cursor = 'pointer'; r.appendChild(el('span', '', '【お問い合わせ】' + x.num + ' ' + x.name + '　' + x.last.text.slice(0, 40)));
+      if(x.un) r.appendChild(el('span', 'badge', x.un)); r.onclick = () => { aThread = x.dev; renderAdmin(); }; B.appendChild(r); });
+  } else DB.d.msgs.filter(m => m.kind === 'sub').sort((a, b) => a.t - b.t).forEach(m => B.appendChild(el('div', 'row', m.text)));
+}
+function aSched(B){
+  const s = DB.d.sched;
+  B.appendChild(el('span', 'input-label', '明日の予定の写真を投稿')); 
+  const fi = el('input'); fi.type = 'file'; fi.accept = 'image/*'; fi.className = 'text-input';
+  fi.onchange = () => { if(fi.files[0]) shrink(fi.files[0], 1400, u => { DB.load(); DB.d.sched.img = u; DB.d.sched.at = Date.now(); DB.imgDirty = true; DB.save(); renderAdmin(); }); };
+  B.appendChild(fi);
+  B.appendChild(el('div', 'sub-note', s.img ? '投稿済み：' + fmt(s.at) + '（翌日19:30に自動で非表示）' : '写真は投稿されていません'));
+  if(s.img){ const i = el('img', 'preview zoomable'); i.src = s.img; i.onclick = () => openLB(i.src); B.appendChild(i); B.appendChild(btn('写真を削除', () => { DB.d.sched.img = null; DB.imgDirty = true; DB.save(); renderAdmin(); }, 'contact-btn')); }
+  B.appendChild(el('span', 'input-label', '写真が無いときの表示（選択肢）'));
+  const sel = el('select', 'text-input'); DB.d.labels.forEach(l => { const o = el('option', '', l); o.value = l; if(l === s.label) o.selected = true; sel.appendChild(o); });
+  sel.onchange = () => { DB.d.sched.label = sel.value; DB.save(); }; B.appendChild(sel);
+}
+function newId(){ return 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); }
+function aItems(B){
+  B.appendChild(el('div', 'sub-note', 'ホーム画面の選択肢を増やせます。開始日より前は「開発中」になり、生徒は選べません（運営だけ開けます）。'));
+  DB.d.items.forEach((it, i) => {
+    const bx = el('div', 'box'), custom = it.type === 'custom';
+    bx.appendChild(el('b', '', (it.icon ? it.icon + ' ' : '') + it.name + (custom ? '' : '（標準）')));
+    bx.appendChild(el('div', 'sub-note', itemSoon(it) ? '🚧 いま：開発中（' + startTxt(it) + ' から使えます）' : '✅ いま：公開中'));
+    const ic = el('input', 'text-input'); ic.value = it.icon; ic.placeholder = 'アイコン（絵文字）'; ic.maxLength = 4; ic.onchange = () => { it.icon = ic.value.trim(); DB.save(); renderAdmin(); };
+    const nm = el('input', 'text-input'); nm.value = it.name; nm.placeholder = '名前'; nm.onchange = () => { it.name = nm.value.trim() || it.name; DB.save(); renderAdmin(); };
+    const dt = el('input', 'text-input'); dt.type = 'date'; dt.value = it.start; dt.onchange = () => { it.start = dt.value; DB.save(); renderAdmin(); };
+    bx.appendChild(ic); bx.appendChild(nm);
+    bx.appendChild(el('span', 'input-label', '開始日（この日より前は「開発中」）')); bx.appendChild(dt);
+    if(it.start) bx.appendChild(btn('開始日をなくす（すぐ公開）', () => { it.start = ''; DB.save(); renderAdmin(); }, 'contact-btn'));
+    if(custom) pagesEditor(bx, it);
+    const row = el('div', 'buttons');
+    row.appendChild(btn('↑ 上へ', () => { if(i > 0){ DB.d.items.splice(i - 1, 0, DB.d.items.splice(i, 1)[0]); DB.save(); renderAdmin(); } }, 'contact-btn'));
+    if(custom) row.appendChild(btn('この項目を削除', () => { if(!confirm('「' + it.name + '」を削除しますか？')) return; DB.d.items.splice(i, 1); delete DB.d.menu[it.id]; DB.save(); renderAdmin(); }, 'del-btn'));
+    bx.appendChild(row); B.appendChild(bx);
+  });
+  B.appendChild(btn('＋ ホームの選択肢を追加', () => {
+    DB.d.items.push({id:'c' + Date.now().toString(36), name:'新しい項目', icon:'📌', type:'custom', start:'', pages:[{id:newId(), title:'新しい項目', body:'', links:[]}]});
+    DB.save(); renderAdmin();
+  }));
+  B.appendChild(el('div', 'sub-note', '※ 本人確認が必要かどうかは「選択肢」タブで選べます。'));
+}
+function pagesEditor(bx, it){
+  bx.appendChild(el('span', 'input-label', 'ページ（1ページ目が最初に開きます）'));
+  it.pages.forEach((pg, pi) => {
+    const pb = el('div', 'box'); pb.style.background = '#f8fafc';
+    pb.appendChild(el('b', '', (pi + 1) + 'ページ目'));
+    const t = el('input', 'text-input'); t.value = pg.title; t.placeholder = 'ページの見出し'; t.onchange = () => { pg.title = t.value; DB.save(); renderAdmin(); };
+    const a = el('textarea'); a.value = pg.body; a.placeholder = '本文'; a.onchange = () => { pg.body = a.value; DB.save(); };
+    pb.appendChild(t); pb.appendChild(a);
+    if(pg.links.length) pb.appendChild(el('span', 'input-label', '次のページへのボタン'));
+    pg.links.forEach((l, li) => {
+      const r = el('div', 'box');
+      const lb = el('input', 'text-input'); lb.value = l.label || ''; lb.placeholder = 'ボタンの文字'; lb.onchange = () => { l.label = lb.value; DB.save(); };
+      const sel = el('select', 'text-input');
+      it.pages.forEach((q, qi) => { if(q.id === pg.id) return; const o = el('option', '', (qi + 1) + 'ページ目　' + (q.title || '（無題）')); o.value = q.id; if(q.id === l.to) o.selected = true; sel.appendChild(o); });
+      sel.onchange = () => { l.to = sel.value; DB.save(); };
+      r.appendChild(lb); r.appendChild(sel);
+      r.appendChild(btn('ボタンを削除', () => { pg.links.splice(li, 1); DB.save(); renderAdmin(); }, 'del-btn')); pb.appendChild(r);
+    });
+    pb.appendChild(btn('＋ 次のページを作る', () => {
+      const n = {id:newId(), title:'新しいページ', body:'', links:[]};
+      it.pages.push(n); pg.links.push({label:'次へ', to:n.id}); DB.save(); renderAdmin();
+    }, 'contact-btn'));
+    if(it.pages.length > 1 && pi > 0) pb.appendChild(btn('このページを削除', () => {
+      if(!confirm((pi + 1) + 'ページ目を削除しますか？')) return;
+      it.pages.splice(pi, 1); it.pages.forEach(q => { q.links = q.links.filter(l => l.to !== pg.id); }); DB.save(); renderAdmin();
+    }, 'del-btn'));
+    bx.appendChild(pb);
+  });
+}
+function aRounds(B){
+  DB.d.rounds.forEach((r, i) => {
+    const bx = el('div', 'box'), n = el('input', 'text-input'); n.value = r.n; n.onchange = () => { r.n = n.value.trim() || r.n; DB.save(); };
+    const d = el('input', 'text-input'); d.type = 'date'; d.value = r.dl; d.onchange = () => { r.dl = d.value; DB.save(); };
+    const st = el('select', 'text-input'); [['active','受付中'],['ended','受付終了'],['pending','未定']].forEach(o => { const op = el('option', '', o[1]); op.value = o[0]; if(o[0] === r.st) op.selected = true; st.appendChild(op); });
+    st.onchange = () => { r.st = st.value; DB.save(); };
+    bx.appendChild(n); bx.appendChild(el('span', 'input-label', '期限日（過ぎると自動で受付終了）')); bx.appendChild(d); bx.appendChild(st);
+    bx.appendChild(btn('削除', () => { DB.d.rounds.splice(i, 1); DB.save(); renderAdmin(); }, 'del-btn')); B.appendChild(bx);
+  });
+  B.appendChild(btn('＋ 回を追加', () => { DB.d.rounds.push({n:'第' + (DB.d.rounds.length + 1) + '回', dl:'', st:'pending'}); DB.save(); renderAdmin(); }));
+}
+function listEditor(B, title, get, set, fixed){
+  B.appendChild(el('h3', '', title));
+  get().forEach(c => { const r = el('div', 'admin-row'); r.appendChild(el('span', '', c));
+    if(fixed && fixed.indexOf(c) >= 0) r.appendChild(el('small', '', '固定')); else r.appendChild(btn('削除', () => { set(get().filter(x => x !== c)); renderAdmin(); }, 'del-btn')); B.appendChild(r); });
+  const i = el('input', 'text-input'); i.maxLength = 20; i.placeholder = '追加する選択肢'; B.appendChild(i);
+  B.appendChild(btn('追加する', () => { const v = i.value.trim(); if(!v || get().indexOf(v) >= 0) return; set(get().concat([v])); renderAdmin(); }));
+}
+function aChoices(B){
+  listEditor(B, '連絡ページの選択肢', () => FIXED_CHOICES.concat(loadExtra()), a => { DB.load(); DB.d.extra = a.filter(x => FIXED_CHOICES.indexOf(x) < 0); DB.save(); }, FIXED_CHOICES);
+  listEditor(B, '予定が無いときの表示', () => DB.d.labels, a => { DB.d.labels = a; DB.save(); }, [DB.d.labels[0]]);
+  B.appendChild(el('h3', '', '本人確認が必要な項目'));
+  DB.d.items.map(x => [x.id, x.name]).forEach(k => { const r = el('label', 'radio-label'), c = el('input'); c.type = 'checkbox'; c.checked = !!DB.d.menu[k[0]]; c.onchange = () => { DB.d.menu[k[0]] = c.checked; DB.save(); }; r.appendChild(c); r.appendChild(document.createTextNode(k[1])); B.appendChild(r); });
+}
+function aOnline(B){
+  B.appendChild(el('span', 'input-label', 'オンライン接続（運営用）'));
+  B.appendChild(el('div', 'sub-note', 'Firebaseに作った運営用アカウントのメールとパスワードです。この端末にだけ保存され、生徒には見えません。'));
+  const em = el('input', 'text-input'); em.type = 'email'; em.placeholder = '運営用メールアドレス'; em.value = store('kj_fbem') || ''; em.autocomplete = 'off';
+  const pw = el('input', 'text-input'); pw.type = 'password'; pw.placeholder = '運営用パスワード'; pw.value = store('kj_fbpw') || '';
+  const e = el('button', 'contact-btn', '👁 表示'); e.type = 'button'; eye(pw, e);
+  B.appendChild(em); B.appendChild(pw); B.appendChild(e);
+  B.appendChild(btn('保存してログイン', async () => { store('kj_fbem', em.value.trim()); store('kj_fbpw', pw.value); const ok = await DB.signIn(); alert(ok ? 'オンラインにログインできました。' : 'ログインできませんでした。メール・パスワードと FB_API_KEY を確認してください。'); doSync(); }));
+  B.appendChild(el('span', 'input-label', 'AI連携キー（ADMIN_KEY）'));
+  B.appendChild(el('div', 'sub-note', 'AIサーバーに設定した ADMIN_KEY と同じものです。Claudeと一緒に対応する機能で使います。この端末にだけ保存されます。'));
+  const ak = el('input', 'text-input'); ak.type = 'password'; ak.placeholder = 'ADMIN_KEY'; ak.value = store('kj_admkey') || ''; ak.autocomplete = 'off'; B.appendChild(ak);
+  B.appendChild(btn('キーを保存', () => { store('kj_admkey', ak.value.trim()); alert('保存しました。'); }, 'contact-btn'));
+  B.appendChild(el('hr'));
+}
+function aSet(B){
+  aOnline(B);
+  B.appendChild(el('span', 'input-label', '運営ログインパスワードを変更'));
+  const i = el('input', 'text-input'); i.type = 'password'; i.placeholder = '新しいパスワード'; B.appendChild(i);
+  const e = el('button', 'contact-btn', '👁 表示'); e.type = 'button'; eye(i, e); B.appendChild(e);
+  B.appendChild(btn('変更する', () => { if(i.value.length < 4){ alert('4文字以上にしてください。'); return; } DB.load(); DB.d.pass = 'h:' + H(i.value); DB.save(); i.value = ''; alert('パスワードを変更しました。'); }));
+}
+
+
+/* ===== アカウント（サインイン・ログイン） ===== */
+/*ACC-START*/
+const ACC = {
+  local(){ DB.load(); DB.d.acc = DB.d.acc || {}; return DB.d.acc; },
+  async has(n){ if(!DB_URL) return !!this.local()[n]; return (await DB.req('GET', '/acct/' + n + '/has')) === true; },
+  async verify(n, pw){ if(!DB_URL){ const a = this.local()[n]; return !!a && a.pw === pw; } return (await DB.req('GET', '/acct/' + n + '/ok/' + H(pw))) === true; },
+  async taken(pw){ if(!DB_URL){ const a = this.local(); return Object.keys(a).some(k => a[k].pw === pw); } return (await DB.req('GET', '/pwidx/' + H(pw))) != null; },
+  async create(n, name, pw){
+    if(!DB_URL){ if((await this.has(n)) || (await this.taken(pw))) throw new Error('dup'); const a = this.local(); a[n] = {name: name, pw: pw, t: Date.now()}; DB.save(); return; }
+    const h = H(pw), up = {};
+    up['acct/' + n] = {has: true, ok: {[h]: true}}; up['pwidx/' + h] = n; up['acctpw/' + n] = {name: name, pw: pw, t: Date.now()};
+    await DB.req('PATCH', '/', up);
+  },
+  async list(){
+    if(!DB_URL){ const a = this.local(); return Object.keys(a).sort().map(k => ({n: k, name: a[k].name, pw: a[k].pw})); }
+    const r = await DB.req('GET', '/acctpw'); return Object.keys(r || {}).sort().map(k => ({n: k, name: r[k].name, pw: r[k].pw}));
+  },
+  async reset(n, pw){
+    if(!DB_URL){ delete this.local()[n]; DB.save(); return; }
+    const up = {}; up['acct/' + n] = null; up['pwidx/' + H(pw)] = null; up['acctpw/' + n] = null; await DB.req('PATCH', '/', up);
+  }
+};
+/*ACC-END*/
+/*JAN-START*/
+/* ===== 内蔵 Code128 読み取り（外部ライブラリ不要） ===== */
+const C128 = (() => {
+  const P = ['212222','222122','222221','121223','121322','131222','122213','122312','132212','221213','221312','231212','112232','122132','122231','113222','123122','123221','223211','221132','221231','213212','223112','312131','311222','321122','321221','312212','322112','322211','212123','212321','232121','111323','131123','131321','112313','132113','132311','211313','231113','231311','112133','112331','132131','113123','113321','133121','313121','211331','231131','213113','213311','213131','311123','311321','331121','312113','312311','332111','314111','221411','431111','111224','111422','121124','121421','141122','141221','112214','112412','122114','122411','142112','142211','241211','221114','413111','241112','134111','111242','121142','121241','114212','124112','124211','411212','421112','421211','212141','214121','412121','111143','111341','131141','114113','114311','411113','411311','113141','114131','311141','411131','211412','211214','211232','2331112'].map(x => x.split('').map(Number));
+  function match(r, i, n, tbl){
+    let T = 0; for(let k = 0; k < n; k++) T += r[i + k];
+    const u = T / (n === 7 ? 13 : 11); let best = -1, be = 1e9;
+    for(const c of tbl){
+      const w = P[c]; let e = 0, mx = 0;
+      for(let k = 0; k < n; k++){ const d = Math.abs(r[i + k] / u - w[k]); e += d; if(d > mx) mx = d; }
+      if(mx < 0.75 && e < be){ be = e; best = c; }
+    }
+    return best;
+  }
+  const ALL = Array.from({length: 106}, (_, i) => i), STARTS = [103, 104, 105];
+  function decodeRuns(r){
+    // r[0] は黒（バー）から始まる連続幅
+    for(let i = 0; i + 6 <= r.length; i += 2){
+      const st = match(r, i, 6, STARTS); if(st < 0) continue;
+      const syms = [st]; let j = i + 6, ok = false;
+      while(j + 6 <= r.length && syms.length < 40){
+        if(j + 7 <= r.length){ const sp = match(r, j, 7, [106]); if(sp === 106){ ok = true; break; } }
+        const c = match(r, j, 6, ALL); if(c < 0) break; syms.push(c); j += 6;
+      }
+      if(!ok || syms.length < 3) continue;
+      let sum = syms[0]; for(let k = 1; k < syms.length - 1; k++) sum += syms[k] * k;
+      if(sum % 103 !== syms[syms.length - 1]) continue;
+      let set = st === 103 ? 'A' : st === 104 ? 'B' : 'C', out = '';
+      for(let k = 1; k < syms.length - 1; k++){
+        const c = syms[k];
+        if(set === 'C'){ if(c < 100) out += (c < 10 ? '0' : '') + c; else if(c === 100) set = 'B'; else if(c === 101) set = 'A'; }
+        else { if(c < 96) out += String.fromCharCode(c + 32); else if(c === 99) set = 'C'; else if(c === 100 && set === 'A') set = 'B'; else if(c === 101 && set === 'B') set = 'A'; }
+      }
+      return out;
+    }
+    return null;
+  }
+  function rowRuns(g, o, w){
+    const s = new Float32Array(w); for(let x = 0; x < w; x++) s[x] = g[o + x];
+    const so = Array.from(s).sort((a, b) => a - b), lo = so[Math.floor(w * 0.03)], hi = so[Math.floor(w * 0.97)];
+    if(hi - lo < 40) return null;
+    const th = (lo + hi) / 2, edges = []; let prev = s[0] < th;
+    const first = prev;
+    for(let x = 1; x < w; x++){ const b = s[x] < th; if(b !== prev){ edges.push(x - 1 + (th - s[x - 1]) / (s[x] - s[x - 1])); prev = b; } }
+    if(edges.length < 8) return null;
+    const runs = []; for(let i = 1; i < edges.length; i++) runs.push(edges[i] - edges[i - 1]);
+    // runs[0] は edges[0]直後の連続: first(黒始まり)なら白、白始まりなら黒。黒始まりの並びに揃える
+    return first ? runs.slice(1) : runs;
+  }
+  function scanLines(g, w, h, vertical){
+    const L = vertical ? w : h, N = vertical ? h : w, seen = {};
+    for(let k = 0; k < 41; k++){
+      const p = Math.floor(L * (0.1 + 0.8 * k / 40)), row = new Uint8Array(N);
+      for(let x = 0; x < N; x++) row[x] = vertical ? g[x * w + p] : g[p * w + x];
+      const runs = rowRuns(row, 0, N); if(!runs) continue;
+      for(const rr of [runs, runs.slice().reverse()]){
+        // 逆向きは末尾が白で終わる場合があるので、黒始まりに揃える
+        const a = rr; const d = decodeRuns(a) || decodeRuns(a.slice(1)); if(d) seen[d] = (seen[d] || 0) + 1;
+      }
+    }
+    let b = null, bn = 0; for(const k in seen) if(seen[k] > bn){ b = k; bn = seen[k]; }
+    return b;
+  }
+  /* g: グレースケール(0-255)の配列, w×h */
+  function scan(g, w, h){ return scanLines(g, w, h, false) || scanLines(g, w, h, true); }
+  return {scan: scan};
+})();
+
+/* ===== JANコード登録 ===== */
+const JAN = {
+  local(){ DB.load(); DB.d.jan = DB.d.jan || {}; return DB.d.jan; },
+  async has(n){ if(!DB_URL) return !!this.local()[n]; return (await DB.req('GET', '/janreg/' + n + '/has')) === true; },
+  async all(){ if(!DB_URL) return this.local(); return (await DB.req('GET', '/janadm')) || {}; },
+  async owner(code){ const a = await this.all(); return Object.keys(a).find(k => a[k] && a[k].code === code) || null; },
+  async set(n, code){
+    if(!DB_URL){ this.local()[n] = {code: code, t: Date.now()}; DB.save(); return; }
+    const up = {}; up['janreg/' + n] = {has: true}; up['janadm/' + n] = {code: code, t: Date.now()}; await DB.req('PATCH', '/', up);
+  },
+  async remove(n){
+    if(!DB_URL){ delete this.local()[n]; DB.save(); return; }
+    const up = {}; up['janreg/' + n] = null; up['janadm/' + n] = null; await DB.req('PATCH', '/', up);
+  }
+};
+/* 名簿のコード表（6桁のコード → 出席番号）。この表にあるコードだけ登録できます */
+const JAN_TABLE = {"583921":"01","714638":"02","296451":"03","831572":"04","467183":"05","925714":"06","351869":"07","648237":"08","179526":"09","832641":"10","594318":"11","726953":"12","481725":"13","963182":"14","315748":"15","857294":"16","642519":"17","198637":"18","734825":"19","526971":"20","819463":"21","275836":"22","941527":"23","368194":"24","752681":"25","413967":"26","689352":"27","127845":"28","536728":"29","874613":"30","291763":"31","653841":"32","918274":"33","345692":"34","761438":"35","824159":"36","497286":"37","138754":"38","572936":"39","946315":"40","683721":"41"};
+function janOk(c){
+  c = String(c || ''); if(/^\d{6}$/.test(c)) return true;
+  if(!/^(\d{8}|\d{13})$/.test(c)) return false;
+  const d = c.split('').map(Number), k = d.pop(); let sum = 0;
+  d.reverse().forEach((x, i) => { sum += x * (i % 2 === 0 ? 3 : 1); });
+  return (10 - sum % 10) % 10 === k;
+}
+/* 登録してよいか確認。問題があれば、理由の文章を返す */
+function janCheck(code, n){
+  const o = JAN_TABLE[code];
+  if(!o) return 'このコードは名簿にありません。もう一度読み取ってください。';
+  if(o !== n) return 'このコードは ' + o + ' ' + (studentList[o] || '') + ' のものです。選んだ ' + n + ' ' + (studentList[n] || '') + ' とは別の人です。';
+  return '';
+}
+let janDoneT = null;
+function janDone(n){
+  const b = $('janDone'); b.textContent = n + '　' + (studentList[n] || '') + ' を登録しました。'; b.classList.remove('hidden');
+  clearTimeout(janDoneT); janDoneT = setTimeout(() => b.classList.add('hidden'), 6000);
+  if(adminIn && aTab === 'jan') renderAdmin();
+}
+function camErrText(e){
+  const n = (e && e.name) || '';
+  if(!window.isSecureContext || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return 'このページではカメラを使えません。https で公開したページを、Safari / Chrome で開いてください。（LINE・メモ・プレビューなどの中や、ファイルを直接開いた状態では使えません）下の「📷 写真を撮って読み取る」は使えます。';
+  if(n === 'NotAllowedError' || n === 'SecurityError') return 'カメラが許可されていません。ブラウザのアドレス欄の鍵（設定）からカメラを「許可」にして、開き直してください。下の「📷 写真を撮って読み取る」は使えます。';
+  if(n === 'NotFoundError' || n === 'OverconstrainedError') return 'カメラが見つかりませんでした。下の「📷 写真を撮って読み取る」を使ってください。';
+  if(n === 'NotReadableError' || n === 'AbortError') return '他のアプリがカメラを使っているようです。閉じてからやり直してください。';
+  return 'カメラを使えませんでした（' + (n || 'エラー') + '）。下の「📷 写真を撮って読み取る」を使ってください。';
+}
+function grayOf(src, sw, sh, maxW){
+  const k = Math.min(1, maxW / sw), w = Math.max(1, Math.round(sw * k)), h = Math.max(1, Math.round(sh * k));
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const x = c.getContext('2d', {willReadFrequently: true}); x.drawImage(src, 0, 0, w, h);
+  const d = x.getImageData(0, 0, w, h).data, g = new Uint8Array(w * h);
+  for(let i = 0, j = 0; j < g.length; i += 4, j++) g[j] = (d[i] * 77 + d[i + 1] * 150 + d[i + 2] * 29) >> 8;
+  return {g: g, w: w, h: h};
+}
+function readCode(src, sw, sh){
+  for(const mw of [1280, 900]){ const r = grayOf(src, sw, sh, mw), c = C128.scan(r.g, r.w, r.h); if(c && janOk(c)) return c; }
+  return null;
+}
+async function startCamera(video, onCode){
+  let stopped = false, stream = null, timer = null, busy = false;
+  const stop = () => { stopped = true; clearInterval(timer); if(stream) stream.getTracks().forEach(t => t.stop()); try{ video.srcObject = null; }catch(e){} };
+  if(!window.isSecureContext || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error('insecure');
+  try{
+    stream = await navigator.mediaDevices.getUserMedia({video: {facingMode: {ideal: 'environment'}, width: {ideal: 1280}, height: {ideal: 720}}, audio: false});
+    video.setAttribute('playsinline', ''); video.muted = true; video.srcObject = stream; await video.play();
+    let det = null;
+    if('BarcodeDetector' in window){ try{ det = new BarcodeDetector({formats: ['code_128', 'ean_13', 'ean_8']}); }catch(e){ det = null; } }
+    timer = setInterval(async () => {
+      if(stopped || busy || video.readyState < 2 || !video.videoWidth) return; busy = true;
+      try{
+        let c = readCode(video, video.videoWidth, video.videoHeight);
+        if(!c && det){ const r = await det.detect(video); for(const x of r){ if(janOk(x.rawValue)){ c = x.rawValue; break; } } }
+        if(c && !stopped) onCode(c);
+      }catch(e){}
+      busy = false;
+    }, 250);
+  }catch(e){ stop(); throw e; }
+  return stop;
+}
+/* 写真から読み取る（カメラが直接使えない環境でも、撮影ボタンなら使えることが多い） */
+async function readPhoto(file){
+  let bmp = null;
+  try{ bmp = await createImageBitmap(file, {imageOrientation: 'from-image'}); }
+  catch(e){ bmp = await new Promise((res, rej) => { const im = new Image(), u = URL.createObjectURL(file); im.onload = () => res(im); im.onerror = rej; im.src = u; }); }
+  const w = bmp.width || bmp.naturalWidth, h = bmp.height || bmp.naturalHeight;
+  let c = readCode(bmp, w, h);
+  if(!c && 'BarcodeDetector' in window){ try{ const r = await new BarcodeDetector({formats: ['code_128', 'ean_13', 'ean_8']}).detect(bmp); for(const x of r){ if(janOk(x.rawValue)){ c = x.rawValue; break; } } }catch(e){} }
+  return c;
+}
+function snapVideo(v){ try{ if(!v.videoWidth) return null; const c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight; c.getContext('2d').drawImage(v, 0, 0); return c; }catch(e){ return null; } }
+/* 文字認識に対応しているブラウザでは、JANコードの上の名前から候補を選びます（対応していなければ手で選びます） */
+async function guessStudent(cv){
+  try{
+    if(!cv || !('TextDetector' in window)) return null;
+    const r = await new TextDetector().detect(cv), t = r.map(x => x.rawValue).join('').replace(/\s/g, '');
+    const ks = Object.keys(studentList).filter(k => k !== '00').sort((a, b) => studentList[b].length - studentList[a].length);
+    return ks.find(k => t.indexOf(studentList[k].replace(/\s/g, '')) >= 0) || null;
+  }catch(e){ return null; }
+}
+let SC = null;
+function openScanner(opt){
+  SC = {opt: opt, stop: null, done: false, code: '', busy: false};
+  $('scTitle').textContent = opt.title; $('scManual').value = '';
+  $('scStep1').classList.remove('hidden'); $('scStep2').classList.add('hidden');
+  $('scanModal').classList.add('active'); startScan();
+}
+async function startScan(){
+  if(!SC) return; SC.done = false; $('scMsg').textContent = 'カメラを起動しています…';
+  try{ const stop = await startCamera($('scVideo'), c => gotCode(c, false)); if(!SC){ stop(); return; } SC.stop = stop; $('scMsg').textContent = 'JANコード（バーコード）を画面に映してください。'; }
+  catch(e){ logErr('カメラ: ' + ((e && e.name) || '') + ' ' + ((e && e.message) || ''), 'JAN'); $('scMsg').textContent = camErrText(e); }
+}
+function gotCode(c, manual){
+  if(!SC || SC.done) return; SC.done = true;
+  const snap = manual ? null : snapVideo($('scVideo'));
+  if(SC.stop){ SC.stop(); SC.stop = null; }
+  SC.code = c;
+  const t = JAN_TABLE[c]; if(t){ showScanStep2(t); return; }
+  guessStudent(snap).then(n => { if(SC) showScanStep2(n); });
+}
+function showScanStep2(guess){
+  const sel = $('scSel'); sel.innerHTML = '';
+  const o0 = el('option', '', '出席番号・名前を選んでください'); o0.value = ''; sel.appendChild(o0);
+  Object.keys(studentList).forEach(k => { const o = el('option', '', k + '　' + studentList[k]); o.value = k; if(k === guess) o.selected = true; sel.appendChild(o); });
+  $('scCode').textContent = 'コード：' + SC.code;
+  const upd = () => { const n = sel.value; $('scAsk').textContent = n ? SC.opt.ask(n, studentList[n]) : ''; $('scYes').disabled = !n; };
+  sel.onchange = upd; upd();
+  $('scStep1').classList.add('hidden'); $('scStep2').classList.remove('hidden');
+}
+$('scPhoto').addEventListener('change', async () => {
+  const f = $('scPhoto').files && $('scPhoto').files[0]; $('scPhoto').value = ''; if(!f || !SC) return;
+  $('scMsg').textContent = '写真を読み取っています…';
+  let c = null; try{ c = await readPhoto(f); }catch(e){ logErr('写真: ' + (e && e.message), 'JAN'); }
+  if(c) gotCode(c, true);
+  else $('scMsg').textContent = 'バーコードを読み取れませんでした。バーコードを大きく、まっすぐ撮ってもう一度お試しください。';
+});
+on($('scManualGo'), () => { const c = $('scManual').value.replace(/\D/g, ''); if(!janOk(c)){ alert('コードの数字が正しくありません（6桁）。もう一度確認してください。'); return; } gotCode(c, true); });
+on($('scNo'), () => { if(!SC || SC.busy) return; $('scStep2').classList.add('hidden'); $('scStep1').classList.remove('hidden'); startScan(); });
+on($('scYes'), async () => {
+  if(!SC || SC.busy) return; const n = $('scSel').value; if(!n) return;
+  SC.busy = true; $('scYes').disabled = true; $('scNo').disabled = true;
+  let r = {ok: false, text: '登録できませんでした。'};
+  try{ r = await SC.opt.onYes(SC.code, n); }catch(e){ logErr('JAN登録: ' + (e && e.message), 'JAN'); }
+  if(!SC) return;
+  SC.busy = false; $('scNo').disabled = false; $('scYes').disabled = false;
+  if(r.ok) janDone(n); else if(r.text) alert(r.text);
+  $('scStep2').classList.add('hidden'); $('scStep1').classList.remove('hidden'); startScan();
+});
+on($('scClose'), () => { if(SC && SC.stop) SC.stop(); SC = null; $('scanModal').classList.remove('active'); if(adminIn && aTab === 'jan') renderAdmin(); });
+
+/* 運営の端末で、カメラ登録 */
+function janCamera(){
+  openScanner({
+    title: '📷 JANコードを登録（このデバイス）',
+    ask: (n, name) => '[' + n + '　' + name + ']を登録しますか？',
+    onYes: async (code, n) => {
+      const bad = janCheck(code, n); if(bad) return {ok: false, text: bad};
+      const o = await JAN.owner(code);
+      if(o && o !== n) return {ok: false, text: 'このJANコードは、すでに ' + o + ' ' + (studentList[o] || '') + ' に登録されています。'};
+      await JAN.set(n, code); return {ok: true};
+    }
+  });
+}
+/* 別のデバイスで登録（インターネット経由・6桁コードでつなぐ） */
+let PAIR = null;
+async function pairStart(){
+  if(!DB_URL){ alert('別のデバイスで登録するには、オンライン接続（DB_URL）が必要です。いまはこの端末の中だけで動いています。'); return; }
+  const code = String(Math.floor(100000 + Math.random() * 900000));
+  try{ await DB.ensureTok(); await DB.req('PUT', '/janpair/' + code, {t: Date.now()}); }
+  catch(e){ alert('始められませんでした。運営のオンラインログイン（設定タブ）と、データベースのルールを確認してください。'); return; }
+  PAIR = {code: code, busy: false, timer: setInterval(pairPoll, 2000)}; renderAdmin();
+}
+function pairStop(){
+  if(!PAIR) return; const c = PAIR.code; clearInterval(PAIR.timer); PAIR = null;
+  Promise.all([DB.req('DELETE', '/janpair/' + c), DB.req('DELETE', '/janreq/' + c)]).catch(() => {});
+}
+async function pairPoll(){
+  if(!PAIR || PAIR.busy || !adminIn) return;
+  const P = PAIR;
+  try{
+    await DB.ensureTok(); const r = await DB.req('GET', '/janreq/' + P.code); if(!r || !PAIR) return;
+    const id = Object.keys(r)[0], q = r[id];
+    if(!q || !janOk(q.code) || !studentList[q.n] || JAN_TABLE[q.code] !== q.n){ await DB.req('DELETE', '/janreq/' + P.code + '/' + id); return; }
+    P.busy = true; pairAsk(P, id, q);
+  }catch(e){}
+}
+function pairAsk(P, id, q){
+  $('pairAskText').textContent = '[' + q.n + '　' + studentList[q.n] + ']を登録しますか？';
+  $('pairAskCode').textContent = 'コード：' + q.code;
+  $('pairAsk').classList.add('active');
+  const fin = async (yes) => {
+    $('pairAsk').classList.remove('active'); let ok = yes, why = yes ? '' : 'no';
+    try{
+      if(yes){ const o = await JAN.owner(q.code); if(o && o !== q.n){ ok = false; why = 'dup'; } else await JAN.set(q.n, q.code); }
+      await DB.req('PATCH', '/janpair/' + P.code, {last: {rid: id, ok: ok, n: q.n, why: why, at: Date.now()}});
+      await DB.req('DELETE', '/janreq/' + P.code + '/' + id);
+      if(ok) janDone(q.n); else if(why === 'dup') alert('このJANコードは、すでに別の人に登録されています。');
+    }catch(e){ alert('登録できませんでした。'); }
+    P.busy = false;
+  };
+  $('pairYes').onclick = () => fin(true); $('pairNo').onclick = () => fin(false);
+}
+/* 登録用デバイス側（別のデバイス） */
+let JH = null;
+on($('janHelperEntry'), () => { $('jMsg').textContent = ''; $('jCode').value = ''; $('jRun').classList.add('hidden'); JH = null; show('J'); });
+on($('jGo'), async () => {
+  const c = $('jCode').value.replace(/\D/g, ''), m = $('jMsg'); m.textContent = '';
+  if(c.length !== 6){ m.textContent = '6桁のコードを入力してください。'; return; }
+  if(!DB_URL){ m.textContent = 'オンライン接続（DB_URL）が必要です。'; return; }
+  $('jGo').disabled = true;
+  try{
+    const r = await DB.req('GET', '/janpair/' + c);
+    if(!r || Date.now() - r.t > 15 * 60 * 1000){ m.textContent = 'コードが違うか、期限が切れています。運営の端末で、もう一度始めてください。'; return; }
+    JH = {code: c}; $('jRun').classList.remove('hidden');
+  }catch(e){ m.textContent = '通信できませんでした。もう一度お試しください。'; }
+  finally{ $('jGo').disabled = false; }
+});
+on($('jScan'), () => {
+  if(!JH) return; const code = JH.code;
+  openScanner({
+    title: '📷 JANコードを登録（運営に送る）',
+    ask: (n, name) => '[' + n + '　' + name + ']を運営の端末に送りますか？',
+    onYes: async (jan, n) => {
+      const bad = janCheck(jan, n); if(bad) return {ok: false, text: bad};
+      const rid = 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+      try{ await DB.req('PUT', '/janreq/' + code + '/' + rid, {code: jan, n: n, t: Date.now()}); }
+      catch(e){ return {ok: false, text: '送れませんでした。もう一度お試しください。'}; }
+      $('scAsk').textContent = '運営の端末で確認しています…';
+      for(let i = 0; i < 40; i++){
+        await new Promise(r => setTimeout(r, 1500));
+        let l = null; try{ l = await DB.req('GET', '/janpair/' + code + '/last'); }catch(e){}
+        if(l && l.rid === rid) return l.ok ? {ok: true} : {ok: false, text: l.why === 'dup' ? 'このJANコードは、すでに別の人に登録されています。' : '運営の端末で「いいえ」が選ばれました。'};
+      }
+      return {ok: false, text: '運営の端末から返事がありませんでした。運営の端末の画面を確認してください。'};
+    }
+  });
+});
+/* 運営タブ */
+function aJan(B){
+  B.appendChild(el('div', 'sub-note', 'JANコードを登録した出席番号だけが、サインイン・ログインできます。（すでにログイン中の人は、そのまま使えます）'));
+  const ch = el('div', 'choices');
+  ch.appendChild(btn('📷 このデバイスのカメラで登録する', janCamera, 'choice-btn'));
+  if(!PAIR) ch.appendChild(btn('📱 別のデバイスで登録する', pairStart, 'choice-btn'));
+  B.appendChild(ch);
+  if(PAIR){
+    const bx = el('div', 'box'); bx.appendChild(el('b', '', '📱 別のデバイスで登録中'));
+    bx.appendChild(el('div', 'pair-code', PAIR.code.slice(0, 3) + ' ' + PAIR.code.slice(3)));
+    bx.appendChild(el('div', 'sub-note', '別のデバイスでこのページを開き、ホームの「JAN登録用デバイスにする」を押して、このコードを入力してください。JANコードを読み取ると、この画面に確認が出ます。（15分で期限切れ）'));
+    bx.appendChild(btn('別のデバイスでの登録を終える', () => { pairStop(); renderAdmin(); }, 'contact-btn')); B.appendChild(bx);
+  }
+  const box = el('div'); B.appendChild(box); box.appendChild(el('div', 'sub-note', '読み込み中…'));
+  JAN.all().then(all => {
+    box.innerHTML = ''; const ks = Object.keys(studentList), done = ks.filter(k => all[k] && all[k].code).length;
+    box.appendChild(el('div', 'who', '登録済み：' + done + ' / ' + ks.length + '人'));
+    ks.forEach(k => {
+      const a = all[k], r = el('div', 'row'); r.appendChild(el('span', '', k + '　' + studentList[k]));
+      if(a && a.code){ r.appendChild(el('span', 'test-status status-active', '✅ 登録済み')); r.appendChild(btn('解除', async () => { if(!confirm(k + ' ' + studentList[k] + ' のJANコードの登録を解除しますか？')) return; try{ await JAN.remove(k); }catch(e){ alert('解除できませんでした。'); } renderAdmin('jan'); }, 'del-btn')); }
+      else r.appendChild(el('span', 'test-status status-pending', '未登録'));
+      box.appendChild(r);
+    });
+  }).catch(() => { box.innerHTML = ''; box.appendChild(el('div', 'sub-note', '読み込めませんでした。運営のオンラインログイン（設定タブ）を確認してください。')); });
+}
+/*JAN-END*/
+function session(){ try{ const u = JSON.parse(localStorage.getItem('kj_user') || 'null'); return u && u.n ? u : null; }catch(e){ return null; } }
+function setSession(u){ try{ if(u) localStorage.setItem('kj_user', JSON.stringify(u)); else localStorage.removeItem('kj_user'); }catch(e){} renderUserTag(); renderHomeAcct(); }
+function renderUserTag(){ const u = session(), t = $('userTag'); t.classList.toggle('hidden', !u); if(u) t.textContent = '👤 ' + u.n + '　' + u.name; }
+function renderHomeAcct(){ $('homeAcct').classList.toggle('hidden', !!session()); }
+let toastT = null;
+function toast(m){ const t = $('toast'); t.onclick = null; t.textContent = m; t.classList.remove('hidden'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.add('hidden'), 5000); }
+
+let aMode = 'sign', aNumOk = false, aHasPw = null, pendingPw = '';
+function updGo(){ $('acctGo').disabled = !aNumOk; $('acctGo').textContent = aMode === 'sign' ? 'サインインする' : 'ログインする'; }
+async function checkHasPw(n){ try{ aHasPw = await ACC.has(n); }catch(e){ aHasPw = false; } if(getNum() === n){ $('logPwBox').classList.toggle('hidden', !aHasPw); updGo(); } }
+function acctNumber(){
+  const n = getNum(); aNumOk = n.length === 2 && !!studentList[n]; aHasPw = null;
+  $('studentNameDisplay').textContent = aNumOk ? studentList[n] : '';
+  $('acctMsg').textContent = ''; $('confirmCard').classList.add('hidden'); $('logPwBox').classList.add('hidden');
+  if(aNumOk && aMode === 'log') checkHasPw(n);
+  updGo();
+}
+function setAMode(m){
+  aMode = m; $('aSign').classList.toggle('active', m === 'sign'); $('aLog').classList.toggle('active', m === 'log');
+  $('signBox').classList.toggle('hidden', m !== 'sign'); $('logBox').classList.toggle('hidden', m !== 'log');
+  $('logPwBox').classList.add('hidden'); $('confirmCard').classList.add('hidden'); $('acctMsg').textContent = '';
+  if(m === 'log' && aNumOk) checkHasPw(getNum());
+  updGo();
+}
+function goLogin(msg){ setAMode('log'); $('acctMsg').textContent = msg || ''; show('A'); }
+on($('aSign'), () => setAMode('sign')); on($('aLog'), () => setAMode('log'));
+on($('homeSign'), () => { setAMode('sign'); show('A'); }); on($('homeLog'), () => { setAMode('log'); show('A'); });
+on($('pwToggle'), () => $('pwBox').classList.toggle('hidden'));
+eye($('newPw'), $('eyeNew')); eye($('logPw'), $('eyeLog'));
+on($('acctGo'), async () => {
+  if(!aNumOk) return;
+  const n = getNum(), msg = $('acctMsg'); msg.textContent = ''; $('acctGo').disabled = true;
+  try{
+    if(!(await JAN.has(n))){ msg.textContent = 'この出席番号のJANコードが、まだ運営に登録されていません。運営に登録してもらってから、もう一度お試しください。'; return; }
+    if(aMode === 'sign'){
+      if(await ACC.has(n)){ msg.textContent = 'この番号には、すでにパスワードが設定されています。「ログイン」から入ってください。'; return; }
+      const pw = $('newPw').value; pendingPw = '';
+      if(!$('pwBox').classList.contains('hidden') && pw){
+        if(pw.length < 4){ msg.textContent = 'パスワードは4文字以上にしてください。'; return; }
+        if(await ACC.taken(pw)){ msg.textContent = 'そのパスワードは使えません。別のパスワードにしてください。'; return; }
+        pendingPw = pw;
+      }
+    } else if(await ACC.has(n)){
+      const pw = $('logPw').value;
+      if(!pw){ msg.textContent = 'パスワードを入力してください。'; return; }
+      if(!(await ACC.verify(n, pw))){ msg.textContent = 'パスワードが違います。'; return; }
+    }
+    $('confirmWho').innerHTML = '出席番号：' + esc(n) + '<br>名前：' + esc(studentList[n]);
+    $('confirmCard').classList.remove('hidden');
+  }catch(e){ msg.textContent = '通信できませんでした。もう一度お試しください。'; }
+  finally{ updGo(); }
+});
+on($('cfNo'), () => { $('confirmCard').classList.add('hidden'); $('acctMsg').textContent = '番号をもう一度確認してください。'; });
+on($('cfYes'), async () => {
+  const n = getNum();
+  if(aMode === 'sign' && pendingPw){
+    try{ await ACC.create(n, studentList[n], pendingPw); }
+    catch(e){ $('confirmCard').classList.add('hidden'); $('acctMsg').textContent = 'パスワードを登録できませんでした。別のパスワードにするか、時間をおいてもう一度お試しください。'; return; }
+  }
+  setSession({n: n, name: studentList[n], pw: aMode === 'sign' ? !!pendingPw : !!aHasPw});
+  pendingPw = ''; $('newPw').value = ''; $('logPw').value = ''; digit1.value = digit2.value = ''; acctNumber();
+  resetNotifyBase(); show(0); toast('ログインしました');
+});
+
+/* ===== 設定 ===== */
+function resetNotifyBase(){ lastUn = null; }
+let lastUn = null;
+function unreadNow(){ DB.load(); return adminIn ? DB.d.msgs.filter(m => m.kind === 'inq' && !m.read).length : DB.d.msgs.filter(m => m.dev === DEV && m.kind === 'rep' && !m.read).length; }
+function notifyCheck(){
+  const n = unreadNow(), prev = lastUn; lastUn = n;
+  if(prev === null || n <= prev || store('kj_notify') === 'off') return;
+  const m = adminIn ? '新しいお問い合わせがあります' : '運営から返信があります';
+  toast('🔔 ' + m);
+  try{ if(window.Notification && Notification.permission === 'granted' && document.hidden) new Notification('漢字提出', {body: m}); }catch(e){}
+}
+function renderSettings(){
+  const B = $('setBody'); B.innerHTML = ''; const u = session();
+  B.appendChild(el('div', 'who', u ? '出席番号：' + u.n + '　名前：' + u.name : 'ログインしていません'));
+  const on_ = store('kj_notify') !== 'off';
+  B.appendChild(el('span', 'input-label', '通知'));
+  B.appendChild(btn(on_ ? '🔔 通知：オン（押すとオフ）' : '🔕 通知：オフ（押すとオン）', async () => {
+    if(on_) store('kj_notify', 'off');
+    else { store('kj_notify', 'on'); if(window.Notification && Notification.permission === 'default'){ try{ await Notification.requestPermission(); }catch(e){} } }
+    resetNotifyBase(); renderSettings(); }, 'contact-btn'));
+  B.appendChild(el('div', 'sub-note', '運営からの返信や新しい連絡があると、画面の上に知らせます。'));
+  if(u){
+    B.appendChild(el('span', 'input-label', 'なりすまし防止パスワード'));
+    if(u.pw){ B.appendChild(el('div', 'sub-note', '設定済みです。変更・解除は、運営に連絡してください。')); }
+    else {
+      B.appendChild(el('div', 'sub-note', '※ 運営にも表示されます。他のサービスと同じものは使わないでください。他の人と同じパスワードは使えません。'));
+      const pi = el('input', 'text-input'); pi.type = 'password'; pi.placeholder = 'パスワード（4文字以上）'; pi.autocomplete = 'new-password'; B.appendChild(pi);
+      const ey = el('button', 'contact-btn', '👁 表示'); ey.type = 'button'; eye(pi, ey); B.appendChild(ey);
+      B.appendChild(btn('パスワードをつける', async () => {
+        const pw = pi.value; if(pw.length < 4){ alert('4文字以上にしてください。'); return; }
+        try{
+          if(await ACC.has(u.n)){ alert('この番号には、すでにパスワードが設定されています。'); return; }
+          if(await ACC.taken(pw)){ alert('そのパスワードは使えません。別のパスワードにしてください。'); return; }
+          await ACC.create(u.n, u.name, pw); u.pw = true; setSession(u); alert('パスワードをつけました。'); renderSettings();
+        }catch(e){ alert('登録できませんでした。時間をおいてもう一度お試しください。'); }
+      }));
+    }
+  }
+  B.appendChild(btn('❓ ヘルプを見る', () => { renderHelp(); show('H'); }, 'contact-btn'));
+  if(u) B.appendChild(btn('ログアウト', () => { if(confirm('ログアウトしますか？')){ setSession(null); resetNotifyBase(); renderSettings(); show(0); } }, 'del-btn'));
+  else B.appendChild(btn('サインイン・ログインへ', () => { setAMode('log'); show('A'); }));
+}
+on($('homeSet'), () => { renderSettings(); show('G'); });
+
+/* ===== ヘルプ ===== */
+function renderHelp(){
+  DB.load(); const b = $('helpList'); b.innerHTML = '';
+  if(!DB.d.help.length) b.appendChild(el('div', 'sub-note', 'ヘルプはまだありません。'));
+  DB.d.help.forEach(h => { const d = el('details', 'diag'); d.appendChild(el('summary', '', h.q)); const t = el('div', '', h.a); t.style.whiteSpace = 'pre-wrap'; d.appendChild(t); b.appendChild(d); });
+}
+on($('homeHelp'), () => { renderHelp(); show('H'); });
+on($('helpContact'), () => openChat('H'));
+
+/* ===== AIサポート（ヘルプ・エラー） ===== */
+async function aiCall(body){
+  const r = await fetch(AI_ENDPOINT, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)});
+  if(!r.ok) throw new Error('AI ' + r.status);
+  return r.json();
+}
+function diagCtx(){
+  const pg = document.querySelector('.page:not(.hidden)');
+  let ls = true; try{ localStorage.setItem('kj_t', '1'); localStorage.removeItem('kj_t'); }catch(e){ ls = false; }
+  let framed = false; try{ framed = window.top !== window.self; }catch(e){ framed = true; }
+  return {
+    ver: 'ver.15', page: pg ? pg.id : '', loggedIn: !!session(), adminMode: !!adminIn,
+    online: {dbUrlSet: !!DB_URL, lastSync: DB.ok, adminTokenOk: !!DB.tok, fbApiKeySet: !!FB_API_KEY},
+    env: {protocol: location.protocol, framed: framed, onLine: navigator.onLine, localStorage: ls, notification: window.Notification ? Notification.permission : 'unsupported', ua: navigator.userAgent.slice(0, 160)},
+    errors: ERRS.slice(-8)
+  };
+}
+function openHelpAI(q){ renderHelp(); show('H'); if(q) $('aiQ').value = q; $('aiBox').scrollIntoView({behavior: 'smooth'}); }
+window.openHelpAI = openHelpAI;
+[['📷 写真・カメラが開かない', '写真やカメラが選べません。どうすればいいですか？'], ['🔑 ログインできない', 'ログインできません。どうすればいいですか？'], ['🔔 通知が来ない', '通知が来ません。どうすればいいですか？'], ['⚠️ エラーが出た', 'エラーが出ました。原因と、どうすればよいか教えてください。']].forEach(a => {
+  const b = el('button', 'contact-btn', a[0]); b.type = 'button'; b.style.cssText = 'width:auto;margin:4px 6px 0 0;padding:8px 12px'; b.onclick = () => { $('aiQ').value = a[1]; }; $('aiChips').appendChild(b);
+});
+on($('aiAsk'), async () => {
+  const q = $('aiQ').value.trim(); if(!q) return;
+  const a = $('aiA'), esc_ = $('aiEsc'), b = $('aiAsk');
+  a.classList.remove('hidden'); esc_.classList.add('hidden');
+  if(!AI_ENDPOINT){ a.textContent = 'AIは、まだ準備中です。下のボタンから、運営に連絡してください。'; esc_.classList.remove('hidden'); return; }
+  b.disabled = true; b.textContent = '考えています…'; a.textContent = '…';
+  try{ const j = await aiCall({action: 'help', question: q, context: diagCtx()}); a.textContent = (j.answer || '').trim() || '答えを作れませんでした。'; }
+  catch(e){ logErr('AI接続に失敗: ' + (e && e.message), 'help'); a.textContent = 'AIにつながりませんでした。時間をおいて、もう一度お試しください。'; }
+  esc_.classList.remove('hidden'); b.disabled = false; b.textContent = 'AIに聞く';
+});
+on($('aiEsc'), () => {
+  const q = $('aiQ').value.trim(), errs = ERRS.slice(-2).map(e => e.msg).join(' / ');
+  openChat('H'); $('chatText').value = '【AIで解決しませんでした】' + q + (errs ? '（エラー：' + errs + '）' : '');
+});
+
+/* ===== 運営：Claudeと一緒に対応する ===== */
+function threadForAI(dev){
+  const ms = DB.d.msgs.filter(m => m.dev === dev && m.kind !== 'sub').sort((a, b) => a.t - b.t);
+  const dg = ms.filter(m => m.diag).pop();
+  return {thread: ms.slice(-20).map(m => ({from: m.kind === 'rep' ? (m.ai ? 'AI' : '運営') : '生徒', text: m.text})), diag: dg ? dg.diag : null};
+}
+function claudePanel(B, dev, num, ta){
+  const bx = el('div', 'box'); bx.appendChild(el('b', '', '🤖 Claudeと一緒に対応する'));
+  bx.appendChild(el('div', 'sub-note', 'Claudeが、会話・エラーの記録・アプリのコードを読んで、原因と返信案を作ります。送る前に、必ず内容を確認してください。'));
+  const out = el('div', 'who hidden'); out.style.whiteSpace = 'pre-wrap';
+  const b1 = btn('返信案をClaudeに作ってもらう', async () => {
+    if(!AI_ENDPOINT){ alert('AI連携がまだ設定されていません（AI_ENDPOINT）。'); return; }
+    const d = threadForAI(dev); b1.disabled = true; b1.textContent = 'Claudeが考えています…'; out.classList.remove('hidden'); out.textContent = '…';
+    try{
+      const j = await aiCall({action: 'assist', key: store('kj_admkey') || '', thread: d.thread, context: d.diag});
+      out.textContent = '【考えられる原因】\n' + (j.analysis || '-') + '\n\n【運営が確認すること】\n' + (j.actions || '-') + (j.draft ? '\n\n返信案を、下の返信欄に入れました。内容を確認して送ってください。' : '');
+      if(j.draft) ta.value = j.draft;
+    }catch(e){ out.textContent = 'Claudeにつながりませんでした（' + (e && e.message) + '）。AI連携キーと、AIサーバーの設定を確認してください。'; }
+    b1.disabled = false; b1.textContent = '返信案をClaudeに作ってもらう';
+  });
+  const b2 = btn('📋 会話をコピーして、Claudeのアプリで相談', async () => {
+    const d = threadForAI(dev);
+    const txt = '【アプリのお問い合わせ対応】\n生徒との会話:\n' + d.thread.map(x => x.from + '：' + x.text).join('\n') + '\n\n端末の状態とエラーの記録:\n' + JSON.stringify(d.diag || {}, null, 1) + '\n\nこの内容から、考えられる原因と、生徒に送る返信案（中学生向け・やさしい日本語）を作ってください。';
+    try{ await navigator.clipboard.writeText(txt); alert('コピーしました。開いたClaudeに貼り付けてください。'); }catch(e){ prompt('これをコピーして、Claudeに貼り付けてください', txt); }
+    window.open('https://claude.ai/new', '_blank');
+  }, 'contact-btn');
+  bx.appendChild(b1); bx.appendChild(b2); bx.appendChild(out); B.appendChild(bx);
+}
+
+/* ===== 運営：アカウント・ヘルプ ===== */
+async function aAccts(B){
+  B.appendChild(el('div', 'sub-note', 'パスワードをつけた生徒の一覧です（番号・名前・パスワード）。「解除」すると、その生徒はもう一度設定できます。'));
+  const box = el('div'); B.appendChild(box); box.appendChild(el('div', 'sub-note', '読み込み中…'));
+  try{
+    const list = await ACC.list(); box.innerHTML = '';
+    if(!list.length) box.appendChild(el('div', 'sub-note', 'パスワードをつけた生徒は、まだいません。'));
+    list.forEach(a => { const r = el('div', 'row'); r.appendChild(el('span', '', a.n + ' ' + a.name + '　🔑 ' + a.pw));
+      r.appendChild(btn('解除', async () => { if(!confirm(a.n + ' ' + a.name + ' のパスワードを解除しますか？')) return; try{ await ACC.reset(a.n, a.pw); }catch(e){ alert('解除できませんでした。'); } renderAdmin('accts'); }, 'del-btn')); box.appendChild(r); });
+  }catch(e){ box.innerHTML = ''; box.appendChild(el('div', 'sub-note', '読み込めませんでした。運営のオンラインログイン（設定タブ）を確認してください。')); }
+}
+function aHelp(B){
+  B.appendChild(el('div', 'sub-note', 'ヘルプの内容を、運営がすべて編集できます（追加・書き換え・並べ替え・削除）。'));
+  DB.d.help.forEach((h, i) => {
+    const bx = el('div', 'box'), t = el('input', 'text-input'); t.value = h.q; t.placeholder = '見出し'; t.onchange = () => { h.q = t.value; DB.save(); };
+    const a = el('textarea'); a.value = h.a; a.placeholder = '内容'; a.onchange = () => { h.a = a.value; DB.save(); };
+    bx.appendChild(t); bx.appendChild(a);
+    const row = el('div', 'buttons');
+    row.appendChild(btn('↑ 上へ', () => { if(i > 0){ DB.d.help.splice(i - 1, 0, DB.d.help.splice(i, 1)[0]); DB.save(); renderAdmin(); } }, 'contact-btn'));
+    row.appendChild(btn('削除', () => { DB.d.help.splice(i, 1); DB.save(); renderAdmin(); }, 'del-btn'));
+    bx.appendChild(row); B.appendChild(bx);
+  });
+  B.appendChild(btn('＋ ヘルプを追加', () => { DB.d.help.push({q: '新しい項目', a: ''}); DB.save(); renderAdmin(); }));
+}
+
+/* ===== 運営モードの解除 ===== */
+function renderAdminBar(){ $('adminBar').classList.toggle('hidden', !adminIn); }
+function exitAdminMode(){
+  pairStop();
+  adminIn = false; DB.admin = false; DB.tok = null; aTab = 'inbox'; aThread = null; resetNotifyBase();
+  previewing = false; document.body.classList.remove('previewing'); $('pvBar').classList.add('hidden'); $('lb').classList.add('hidden');
+  // 運営用に読み込んだ全員分のやり取りを、この端末から外す（自分の分だけ残す）
+  DB.load();
+  Object.keys(DB.sent).forEach(k => { if(k.indexOf(DEV + '/') !== 0) delete DB.sent[k]; });
+  DB.d.msgs = DB.d.msgs.filter(m => m.dev === DEV); DB.cache();
+  $('adminLogin').classList.remove('hidden'); $('adminPanel').classList.add('hidden');
+  $('adminPass').value = ''; $('adminMsg').textContent = ''; $('forgotMail').value = ''; $('forgotBox').classList.add('hidden');
+  renderAdminBar(); renderUserTag(); renderHomeAcct(); show(0); toast('運営モードを解除しました');
+}
+on($('exitAdmin'), exitAdminMode); on($('adminBarExit'), exitAdminMode);
+
+/* ---------- オンライン表示 ---------- */
+function onlineText(){ return !DB_URL ? '⚠️ オンライン未設定：いまはこの端末の中だけで動いています（DB_URL が空）。' : (DB.admin && !DB.tok && DB.ok === false) ? '🔑 運営用のオンラインログインが必要です（「設定」タブで入力）。' : DB.ok === null ? '接続を確認しています…' : DB.ok ? '🟢 オンライン：共有データベースに接続できています。' : '🔴 接続できません：DB_URL とデータベースのルールを確認してください。'; }
+function onlineBadge(){ const e = el('div', 'who', onlineText()); e.id = 'onl'; return e; }
+function updStatus(){ const e = $('onl'); if(e) e.textContent = onlineText(); }
+
+/* ---------- 生徒画面プレビュー（運営用） ---------- */
+let previewing = false;
+function startPreview(label, fn){
+  previewing = true; document.body.classList.add('previewing');
+  $('pvLabel').textContent = '👀 プレビュー中：' + label + '（操作・送信はできません）';
+  $('pvBar').classList.remove('hidden'); fn();
+}
+function exitPreview(){
+  previewing = false; document.body.classList.remove('previewing');
+  $('pvBar').classList.add('hidden'); $('lb').classList.add('hidden');
+  show(5); renderAdmin('preview');
+}
+on($('pvExit'), exitPreview);
+function previewChat(num){
+  DB.load(); const box = $('chatLog'); box.innerHTML = '';
+  $('chatWho').textContent = '出席番号：' + num + '　' + (studentList[num] || '');
+  DB.d.msgs.filter(m => m.num === num && m.kind !== 'sub').forEach(m => {
+    const b = el('div', 'bub ' + (m.kind === 'rep' ? 'l' : 'r'), m.text);
+    b.appendChild(el('small', '', (m.kind === 'rep' ? (m.ai ? '🤖 AI　' : '運営　') : '') + fmt(m.t))); box.appendChild(b);
+  });
+  show('C');
+}
+function aPreview(B){
+  B.appendChild(el('div', 'sub-note', '生徒が見る画面を、操作できない状態で確認できます。'));
+  const items = [
+    ['ホーム', () => show(0)], ['本人確認', () => show('K')],
+    ['回数の選択', () => { renderRounds(); show(1); }], ['提出方法', () => { buildMulti(); show(2); }],
+    ['提出完了', () => { $('receipt').innerHTML = '<b>提出内容の記録</b><div style="margin-top:8px;line-height:1.8">（プレビュー用の例）<br>出席番号：01<br>名前：足立まりん<br>回数：第3回</div>'; show(3); }],
+    ['サインイン・ログイン', () => show('A')], ['設定', () => { renderSettings(); show('G'); }], ['ヘルプ', () => { renderHelp(); show('H'); }],
+    ['予定を確認', () => show('S')], ...DB.d.items.filter(x => x.type === 'custom').map(x => [x.name, () => openCustom(x, null)]), ['明日の予定', () => { renderT(); show('T'); }], ['提出物の確認', () => { renderP(); show('P'); }]
+  ];
+  const box = el('div', 'choices'); items.forEach(it => box.appendChild(btn(it[0], () => startPreview(it[0], it[1]), 'choice-btn'))); B.appendChild(box);
+  B.appendChild(el('span', 'input-label', '生徒のトーク画面を見る'));
+  const sel = el('select', 'text-input');
+  Object.keys(studentList).forEach(k => { const o = el('option', '', k + ' ' + studentList[k]); o.value = k; sel.appendChild(o); });
+  B.appendChild(sel);
+  B.appendChild(btn('📱 この生徒のトーク画面を見る', () => startPreview('トーク画面（' + sel.value + ' ' + studentList[sel.value] + '）', () => previewChat(sel.value)), 'contact-btn'));
+}
+
+/* ---------- 共有（オンライン）の自動更新 ---------- */
+function refreshView(){
+  if(previewing) return;
+  const vis = id => !$(id).classList.contains('hidden');
+  if(vis('page0')) renderHome();
+  if(vis('pageC') && document.activeElement !== $('chatText')) renderChat();
+  if(vis('page5') && !$('adminPanel').classList.contains('hidden') && aTab === 'inbox'){
+    const ta = document.querySelector('#adminBody textarea');
+    if(!ta || !ta.value) renderAdmin();
+  }
+}
+let syncing = false;
+async function doSync(){
+  if(syncing || !DB_URL) return;
+  syncing = true; await DB.sync(); syncing = false;
+  refreshView(); updStatus(); notifyCheck();
+}
+setInterval(() => { if(!document.hidden) doSync(); }, 5000);
+document.addEventListener('visibilitychange', () => { if(!document.hidden) doSync(); });
+doSync().then(() => renderRounds());
+renderRounds(); renderHome();
+setAMode('sign'); renderUserTag(); renderHomeAcct();
+</script>
+</body>
+</html>
